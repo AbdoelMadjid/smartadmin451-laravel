@@ -9,7 +9,7 @@
 
 ## Insstaler
 ```console
-  git clone https://github.com/AbdoelMadjid/smartadmin451-laravel.git
+git clone https://github.com/AbdoelMadjid/smartadmin451-laravel.git
 ```
 ```console
 composer install**
