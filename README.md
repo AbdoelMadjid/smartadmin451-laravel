@@ -8,14 +8,28 @@
 </p>
 
 ## Insstaler
-- git clone https://github.com/AbdoelMadjid/smartadmin451-laravel.git
-- composer install**
-- composer dump-autoload**
-- cp .env.example .env
-- php artisan key:generate
-- rename DB_DATABASE=....
-- php artisan migrate
-- php artisan db:seed
+```console
+  git clone https://github.com/AbdoelMadjid/smartadmin451-laravel.git
+```
+```console
+composer install**
+```
+```console
+composer dump-autoload**
+```
+```console
+cp .env.example .env
+```
+```console
+php artisan key:generate
+```
+rename DB_DATABASE=....
+```console
+php artisan migrate
+```
+```console
+php artisan db:seed
+```
   
 ## About Laravel
 
