@@ -7,6 +7,37 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Installer
+```console
+git clone https://github.com/AbdoelMadjid/smartadmin451-laravel.git
+```
+```console
+composer install**
+```
+```console
+composer dump-autoload**
+```
+```console
+cp .env.example .env
+```
+```console
+php artisan key:generate
+```
+```html
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=smartadmin451-laravel
+DB_USERNAME=root
+DB_PASSWORD=
+```
+```console
+php artisan migrate
+```
+```console
+php artisan db:seed
+```
+  
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
