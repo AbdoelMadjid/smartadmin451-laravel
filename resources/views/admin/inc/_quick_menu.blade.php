@@ -6,9 +6,9 @@
     <a href="#" class="menu-item btn" data-toggle="tooltip" data-placement="left" title="Scroll Top">
         <i class="fal fa-arrow-up"></i>
     </a>
-    <a href="#" class="menu-item btn js-bootbox-alert-smartadmin" data-title="Konfirmasi"
-        data-message="Apakah Anda yakin ingin logout?" data-auto-redirect-url="/page_auth_login_alt"
-        data-toggle="tooltip" data-placement="left" title="Logout">
+    <a href="#" id="ya-atau-tidak" class="menu-item btn" data-title="Konfirmasi"
+        data-message="Apakah Anda yakin ingin logout?" data-redirect-url="/" data-toggle="tooltip" data-placement="left"
+        title="Logout">
         <i class="fal fa-sign-out"></i>
     </a>
     {{--     <a href="/page_auth_login" class="menu-item btn" data-toggle="tooltip" data-placement="left" title="Logout">

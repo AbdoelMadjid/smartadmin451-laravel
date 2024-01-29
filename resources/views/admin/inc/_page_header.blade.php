@@ -60,15 +60,6 @@
             @include($fiturView)
         @endforeach
 
-        {{-- <!-- app settings -->
-        @include('admin.inc.fitur._app_settings')
-        <!-- app shortcuts -->
-        @include('admin.inc.fitur._app_shortcuts')
-        <!-- app message -->
-        @include('admin.inc.fitur._app_message')
-        <!-- app notification -->
-        @include('admin.inc.fitur._app_notification')
-        <!-- app user menu --> --}}
         <div>
             <a href="#" data-toggle="dropdown" title="drlantern@gotbootstrap.com"
                 class="header-icon d-flex align-items-center justify-content-center ml-2">
@@ -124,9 +115,8 @@
                     </div>
                 </div>
                 <div class="dropdown-divider m-0"></div>
-                <a href="#" class="dropdown-item fw-500 pt-3 pb-3 js-bootbox-alert-smartadmin"
-                    data-title="Konfirmasi" data-message="Apakah Anda yakin ingin logout?"
-                    data-auto-redirect-url="/page_login_alt" title="Logout">
+                <a href="#" id="ya-atau-tidak" class="dropdown-item fw-500 pt-3 pb-3" data-title="Konfirmasi"
+                    data-message="Apakah Anda yakin ingin logout?" data-redirect-url="/" title="Logout">
                     <span data-i18n="drpdwn.page-logout">Logout</span>
                     <span class="float-right fw-n">&commat;codexlantern</span>
                 </a>

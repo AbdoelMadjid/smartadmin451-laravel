@@ -175,7 +175,7 @@
                         Use of an item is bound by the license you purchase. A license grants you a non-exclusive and
                         non-transferable right to use and incorporate the item in your personal or commercial projects. All
                         third party plugins used in SmartAdmin WebApp are MIT or Customized license (license catered for
-                        redistrubtion with this theme). Please check the <a href="info_app_docs.html">documentation
+                        redistrubtion with this theme). Please check the <a href="/info_app_docs">documentation
                             page</a> under plugins section for details about each plugin.
                     </small>
                 </h3>

@@ -40,7 +40,7 @@
                 </p>
                 <p class="mb-g">
                     <strong>For more information on premium support and purchasing support credits, please find our <a
-                            href="intel_introduction.html">contact details here</a>.</strong>
+                            href="/intel_introduction">contact details here</a>.</strong>
                 </p>
                 <h3>
                     Free community support

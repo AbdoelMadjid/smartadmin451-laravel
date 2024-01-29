@@ -1558,7 +1558,7 @@
                     <small>
                         Your <code>app.config.js</code> mainly controls the behaviour of your application, you can configure
                         the navigation speed, disable visual effects, and change localstorage settings. To learn more about
-                        app configuration and how it works, check out the <a href="plugin_appcore.html" class="fw-500"
+                        app configuration and how it works, check out the <a href="/plugin_appcore" class="fw-500"
                             title="app.core.js">app.core.js</a> page
                     </small>
                 </h2>
@@ -1801,7 +1801,7 @@ var myapp_config = {
                     Layout Options <a href="javascript:void(0);" name="applayouts"></a>
                     <small>
                         SmartAdmin WebApp has over 285 layout combinations, you can check them out at <a
-                            href="settings_layout_options.html" class="fw-500">Layout Options</a> page.
+                            href="/settings_layout_options" class="fw-500">Layout Options</a> page.
                     </small>
                 </h2>
                 <p class="panel-tag">
@@ -1809,7 +1809,7 @@ var myapp_config = {
                         data-target=".js-modal-settings"><i class="fal fa-cog"></i> Settings Panel</a>. The classes comes
                     with 3 unique prefixes, <code>.header-*</code>, <code>.nav-*</code>, and <code>.mod-*</code>. You can
                     also save your state settings to your database using <code>initApp.pushSettings()</code> and <code>
-                        initApp.getSettings()</code> methods, more info found in the <a href="settings_saving_db.html"
+                        initApp.getSettings()</code> methods, more info found in the <a href="/settings_saving_db"
                         class="fw-500">Saving to Database</a> page.
                 </p>
                 <p class="fw-500">
@@ -2653,7 +2653,7 @@ $nav-background:                    #ed1c34; //<-- my unique change here</pre>
                 </p>
                 <br>
                 <p class="panel-tag fw-500">
-                    To see all list of Core plugins for a barebone version please visit the <a href="plugin_faq.html"
+                    To see all list of Core plugins for a barebone version please visit the <a href="/plugin_faq"
                         class="fw-500"> Plugin FAQ</a> page.
                 </p>
                 <div class="mb-g">
@@ -2837,11 +2837,11 @@ link rel="stylesheet" media="screen, print" href="css/app.bundle-rtl.css"</pre>
                     </small>
                 </h2>
                 <p>All support questions related to HTML and/or CSS will be honored. Issues that are encountered on the Seed
-                    versions of specific flavors of SmartAdmin are covered by their <a href="intel_introduction.html"
+                    versions of specific flavors of SmartAdmin are covered by their <a href="/intel_introduction"
                         target="_blank">respective authors</a>, but will be limited to HTML and/or CSS issues. If you need
                     assistance with a technical issue that is currently not covered by the FAQ, you will need to have
                     purchased a Full license of that flavor and contact the respective author for further assistance. The
-                    Full version links will be added to the <a href="info_app_flavors.html" target="_blank">Flavors</a>
+                    Full version links will be added to the <a href="/info_app_flavors" target="_blank">Flavors</a>
                     page once they are made available.</p>
             </div>
         </div>
@@ -2903,7 +2903,7 @@ link rel="stylesheet" media="screen, print" href="css/app.bundle-rtl.css"</pre>
     <script>
         $(document).ready(function() {
             var jsdisplay = $('#js-display');
-            var url = "media/data/plugin-reference.json";
+            var url = "/admin/media/data/plugin-reference.json";
 
             $.getJSON(url, function(data) {
                 $.each(data, function(index, value) {

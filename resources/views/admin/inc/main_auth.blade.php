@@ -41,7 +41,7 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
 
 <body>
     <!-- DOC: script to save and load page settings -->
-    {{-- @include('admin.inc._script_page_settings') --}}
+    @include('admin.inc._script_page_settings')
 
     <!-- BEGIN Page Wrapper -->
     <div class="page-wrapper auth">

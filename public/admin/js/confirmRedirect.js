@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // Konfigurasi untuk bootbox
             bootbox.confirm({
                 title: "<i class='fal fa-times-circle text-primary mr-2'></i> <span class='text-primary fw-300'><strong>"+title+"</strong></span>",
-                message: "<span class='fw-900 font-italic'>Pertanyaan: </span><strong>"+message+"</strong><br><br> <span class='text-info fw-300 font-italic fs-nano' id='timer-display'></span>",
+                message: "<span class='fw-900 font-italic'>Pertanyaan: </span><strong>"+message+"</strong><br><br> <span class='text-primary font-italic fs-nano' id='timer-display'></span>",
                 buttons: {
                     confirm: {
                         label: 'Ya',

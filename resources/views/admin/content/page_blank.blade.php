@@ -63,20 +63,20 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
     <!-- DOC: script to save and load page settings -->
     <script>
         /**
-         *	This script should be placed right after the body tag for fast execution 
+         *	This script should be placed right after the body tag for fast execution
          *	Note: the script is written in pure javascript and does not depend on thirdparty library
          **/
         'use strict';
 
         var classHolder = document.getElementsByTagName("BODY")[0],
-            /** 
+            /**
              * Load from localstorage
              **/
             themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
             {},
             themeURL = themeSettings.themeURL || '',
             themeOptions = themeSettings.themeOptions || '';
-        /** 
+        /**
          * Load theme options
          **/
         if (themeSettings.themeOptions) {
@@ -96,8 +96,8 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
         } else if (themeSettings.themeURL && document.getElementById('mytheme')) {
             document.getElementById('mytheme').href = themeSettings.themeURL;
         }
-        /** 
-         * Save to localstorage 
+        /**
+         * Save to localstorage
          **/
         var saveSettings = function() {
             themeSettings.themeOptions = String(classHolder.className).split(/[^\w-]+/).filter(function(item) {
@@ -108,7 +108,7 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
             };
             localStorage.setItem('themeSettings', JSON.stringify(themeSettings));
         }
-        /** 
+        /**
          * Reset settings
          **/
         var resetSettings = function() {
@@ -124,7 +124,7 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                     <a href="#"
                         class="page-logo-link press-scale-down d-flex align-items-center position-relative"
                         data-toggle="modal" data-target="#modal-shortcut">
-                        <img src="img/logo.png" alt="SmartAdmin WebApp" aria-roledescription="logo">
+                        <img src="/admin/img/logo.png" alt="SmartAdmin WebApp" aria-roledescription="logo">
                         <span class="page-logo-text mr-1">SmartAdmin WebApp</span>
                         <span class="position-absolute text-white opacity-50 small pos-top pos-right mr-2 mt-n2"></span>
                         <i class="fal fa-angle-down d-inline-block ml-1 fs-lg color-primary-300"></i>
@@ -1965,86 +1965,86 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                                 </li>
                                 <li>
                                     <a href="#" id="myapp-1" data-action="theme-update" data-themesave
-                                        data-theme="css/themes/cust-theme-1.css" data-toggle="tooltip"
+                                        data-theme="/admin/css/themes/cust-theme-1.css" data-toggle="tooltip"
                                         data-placement="top" title="Tapestry" data-original-title="Tapestry"></a>
                                 </li>
                                 <li>
                                     <a href="#" id="myapp-2" data-action="theme-update" data-themesave
-                                        data-theme="css/themes/cust-theme-2.css" data-toggle="tooltip"
+                                        data-theme="/admin/css/themes/cust-theme-2.css" data-toggle="tooltip"
                                         data-placement="top" title="Atlantis" data-original-title="Atlantis"></a>
                                 </li>
                                 <li>
                                     <a href="#" id="myapp-3" data-action="theme-update" data-themesave
-                                        data-theme="css/themes/cust-theme-3.css" data-toggle="tooltip"
+                                        data-theme="/admin/css/themes/cust-theme-3.css" data-toggle="tooltip"
                                         data-placement="top" title="Indigo" data-original-title="Indigo"></a>
                                 </li>
                                 <li>
                                     <a href="#" id="myapp-4" data-action="theme-update" data-themesave
-                                        data-theme="css/themes/cust-theme-4.css" data-toggle="tooltip"
+                                        data-theme="/admin/css/themes/cust-theme-4.css" data-toggle="tooltip"
                                         data-placement="top" title="Dodger Blue"
                                         data-original-title="Dodger Blue"></a>
                                 </li>
                                 <li>
                                     <a href="#" id="myapp-5" data-action="theme-update" data-themesave
-                                        data-theme="css/themes/cust-theme-5.css" data-toggle="tooltip"
+                                        data-theme="/admin/css/themes/cust-theme-5.css" data-toggle="tooltip"
                                         data-placement="top" title="Tradewind"
                                         data-original-title="Tradewind"></a>
                                 </li>
                                 <li>
                                     <a href="#" id="myapp-6" data-action="theme-update" data-themesave
-                                        data-theme="css/themes/cust-theme-6.css" data-toggle="tooltip"
+                                        data-theme="/admin/css/themes/cust-theme-6.css" data-toggle="tooltip"
                                         data-placement="top" title="Cranberry"
                                         data-original-title="Cranberry"></a>
                                 </li>
                                 <li>
                                     <a href="#" id="myapp-7" data-action="theme-update" data-themesave
-                                        data-theme="css/themes/cust-theme-7.css" data-toggle="tooltip"
+                                        data-theme="/admin/css/themes/cust-theme-7.css" data-toggle="tooltip"
                                         data-placement="top" title="Oslo Gray"
                                         data-original-title="Oslo Gray"></a>
                                 </li>
                                 <li>
                                     <a href="#" id="myapp-8" data-action="theme-update" data-themesave
-                                        data-theme="css/themes/cust-theme-8.css" data-toggle="tooltip"
+                                        data-theme="/admin/css/themes/cust-theme-8.css" data-toggle="tooltip"
                                         data-placement="top" title="Chetwode Blue"
                                         data-original-title="Chetwode Blue"></a>
                                 </li>
                                 <li>
                                     <a href="#" id="myapp-9" data-action="theme-update" data-themesave
-                                        data-theme="css/themes/cust-theme-9.css" data-toggle="tooltip"
+                                        data-theme="/admin/css/themes/cust-theme-9.css" data-toggle="tooltip"
                                         data-placement="top" title="Apricot" data-original-title="Apricot"></a>
                                 </li>
                                 <li>
                                     <a href="#" id="myapp-10" data-action="theme-update" data-themesave
-                                        data-theme="css/themes/cust-theme-10.css" data-toggle="tooltip"
+                                        data-theme="/admin/css/themes/cust-theme-10.css" data-toggle="tooltip"
                                         data-placement="top" title="Blue Smoke"
                                         data-original-title="Blue Smoke"></a>
                                 </li>
                                 <li>
                                     <a href="#" id="myapp-11" data-action="theme-update" data-themesave
-                                        data-theme="css/themes/cust-theme-11.css" data-toggle="tooltip"
+                                        data-theme="/admin/css/themes/cust-theme-11.css" data-toggle="tooltip"
                                         data-placement="top" title="Green Smoke"
                                         data-original-title="Green Smoke"></a>
                                 </li>
                                 <li>
                                     <a href="#" id="myapp-12" data-action="theme-update" data-themesave
-                                        data-theme="css/themes/cust-theme-12.css" data-toggle="tooltip"
+                                        data-theme="/admin/css/themes/cust-theme-12.css" data-toggle="tooltip"
                                         data-placement="top" title="Wild Blue Yonder"
                                         data-original-title="Wild Blue Yonder"></a>
                                 </li>
                                 <li>
                                     <a href="#" id="myapp-13" data-action="theme-update" data-themesave
-                                        data-theme="css/themes/cust-theme-13.css" data-toggle="tooltip"
+                                        data-theme="/admin/css/themes/cust-theme-13.css" data-toggle="tooltip"
                                         data-placement="top" title="Emerald" data-original-title="Emerald"></a>
                                 </li>
                                 <li>
                                     <a href="#" id="myapp-14" data-action="theme-update" data-themesave
-                                        data-theme="css/themes/cust-theme-14.css" data-toggle="tooltip"
+                                        data-theme="/admin/css/themes/cust-theme-14.css" data-toggle="tooltip"
                                         data-placement="top" title="Supernova"
                                         data-original-title="Supernova"></a>
                                 </li>
                                 <li>
                                     <a href="#" id="myapp-15" data-action="theme-update" data-themesave
-                                        data-theme="css/themes/cust-theme-15.css" data-toggle="tooltip"
+                                        data-theme="/admin/css/themes/cust-theme-15.css" data-toggle="tooltip"
                                         data-placement="top" title="Hoki" data-original-title="Hoki"></a>
                                 </li>
                             </ul>
@@ -2161,8 +2161,8 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
       + waves.js (extension)
       + smartpanels.js (extension)
       + src/../jquery-snippets.js (core) -->
-    <script src="js/vendors.bundle.js"></script>
-    <script src="js/app.bundle.js"></script>
+    <script src="/admin/js/vendors.bundle.js"></script>
+    <script src="/admin/js/app.bundle.js"></script>
     <!--This page contains the basic JS and CSS files to get started on your project. If you need aditional addon's or plugins please see scripts located at the bottom of each page in order to find out which JS/CSS files to add.-->
 </body>
 <!-- END Body -->

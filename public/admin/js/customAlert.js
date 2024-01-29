@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // Konfigurasi untuk bootbox
             bootbox.alert({
                 title: "<i class='fal fa-check-circle text-success mr-2'></i> <span class='text-success fw-500'>"+title+"</span>",
-                message: "<span class='text-success fw-900 font-italic'>"+message+"</span> <br><br><span class='text-info fw-300 font-italic fs-nano' id='timer-display'></span>",
+                message: "<span class='text-success fw-900 font-italic'>"+message+"</span> <br><br><span class='text-primary font-italic fs-nano' id='timer-display'></span>",
                 centerVertical: true,
                 className: "modal-alert",
                 closeButton: false,
