@@ -17,6 +17,18 @@
             ])
             @endcomponent
         </div>
+        <x-alert-messages color="primary" :title="__('Pro Tip!!!')">
+            <p>
+                Laravel has provided one of the interesting features in its templating blade, namely Components.
+                Components allow us to chop up code so that it can be reused without having to rewrite all the
+                parts completely. Similar to sections and layouts which are also part of the blade tempalting
+                feature.
+            </p>
+            <p class="m-0">
+                Follow a slogal with a useful link or call to action <a href="#" target="_blank">Call to
+                    action >></a>
+            </p>
+        </x-alert-messages>
 
         <div class="alert alert-primary">
             <div class="d-flex flex-start w-100">
@@ -114,300 +126,278 @@
             <x-slot name='column1'>
                 <div class="card mb-g">
                     <div class="card-body">
-                        <table class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th style="width: 5%; vertical-align: top;">#</th>
-                                    <th style="width: 10%; vertical-align: top;">Name</th>
-                                    <th style="width: 10%; vertical-align: top;">Component</th>
-                                    <th style="width: 30%; vertical-align: top;">Variabel</th>
-                                    <th style="width: 30%; vertical-align: top;">Example</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <x-number-style color="danger">1</x-number-style>
-                                    </td>
-                                    <td>Icon</td>
-                                    <td><code>x-icon</code></td>
-                                    <td>
-                                        <code>fal = false</code><br>
-                                        <code>far = false</code><br>
-                                        <code>fas = false</code><br>
-                                        <code>fad = false</code><br>
-                                        <code>fab = false</code><br>
-                                        <code>size = "2x - 9x"</code><br>
-                                        <code>color = success, warning, danger, info, primary, secondary</code><br>
-                                        <code>spin = false</code><br>
-                                        <code>pulse = false</code><br>
-                                        <code>beat = false</code><br>
-                                        <code>flip = false</code><br>
-                                        <code>shake = false</code><br>
-                                        <code>rotate_90 = false</code><br>
-                                        <code>rotate_180 = false</code><br>
-                                        <code>rotate_270 = false</code><br>
-                                    </td>
-                                    <td>
-                                        <table class="table table-striped table-hover">
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <code>
-                                                            &lt;x-icon fal name="coffee" size="2x"
-                                                            color="danger"
-                                                            /&gt;
-                                                        </code>
-                                                    </td>
-                                                    <td>
-                                                        <x-icon fal name="coffee" size="2x" color="danger" />
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <code>&lt;x-icon fas name="cog" size="2x"
-                                                            color="primary" spin /&gt;</code>
-                                                    </td>
-                                                    <td>
-                                                        <x-icon fas name="cog" size="2x" color="primary" spin />
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <code>&lt;x-icon fad name="car-bump" size="2x"
-                                                            color="success" /&gt;</code>
-                                                    </td>
-                                                    <td>
-                                                        <x-icon fad name="car-bump" size="2x" color="success" />
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <a href="/icons_fontawesome_light" target="_blank">Reference</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <x-number-style color="danger">2</x-number-style>
-                                    </td>
-                                    <td>Number Style</td>
-                                    <td>
-                                        <code>x-number-style</code>
-                                    </td>
-                                    <td>
-                                        <code>
-                                            <code>color = success, warning, danger, info, primary, secondary</code>
-                                        </code>
-                                    </td>
-                                    <td>
-                                        <x-number-style color="success">11</x-number-style>
-                                        <x-number-style color="info">25</x-number-style>
-                                        <x-number-style color="danger">1</x-number-style>
-                                        <hr>
-                                        <code>
-                                            &lt;x-number-style color="danger"&gt; 1 &lt;/x-number-style&gt;
-                                        </code>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <x-number-style color="danger">3</x-number-style>
-                                    </td>
-                                    <td>Alert</td>
-                                    <td><code>x-alert-messages</code></td>
-                                    <td></td>
-                                    <td>
-                                        <x-alert-messages icon='trash'>
-                                            ini adalah messages
-                                        </x-alert-messages>
-                                    </td>
-                                <tr>
-                                    <td>
-                                        <x-number-style color="danger">4</x-number-style>
-                                    </td>
-                                    <td>
-                                        Button
-                                    </td>
-                                    <td colspan="3">
-                                        <h3>Default Button & Outline Button</h3>
-                                        with color <code>&lt;x-button color="$color"&gt;Save&lt;/x-button&gt;</code>
-                                        <hr>
-                                        <x-button color="primary">Primary</x-button>
-                                        <x-button color="secondary">Secondary</x-button>
-                                        <x-button color="default">Default</x-button>
-                                        <x-button color="success">Success</x-button>
-                                        <x-button color="warning">Warning</x-button>
-                                        <x-button color="info">Info</x-button>
-                                        <x-button color="danger">Danger</x-button>
-                                        <x-button color="dark">Dark</x-button>
-                                        <x-button color="light">Light</x-button>
-                                        <hr>
-                                        with style outline <code>&lt;x-button style
-                                            color="$color"&gt;Save&lt;/x-button&gt;</code>
-                                        <hr>
-                                        <x-button style color="primary">Primary</x-button>
-                                        <x-button style color="secondary">Secondary</x-button>
-                                        <x-button style color="default">Default</x-button>
-                                        <x-button style color="success">Success</x-button>
-                                        <x-button style color="warning">Warning</x-button>
-                                        <x-button style color="info">Info</x-button>
-                                        <x-button style color="danger">Danger</x-button>
-                                        <x-button style color="dark">Dark</x-button>
-                                        <x-button style color="light">Light</x-button>
-                                        <br>
-                                        <div class="panel-tag mt-2 mb-2">for outline buttons also applies to btn-icon,
-                                            size, rounded-circle, btn-pills</div>
-                                        <hr class='mt-0'>
-                                        <h3>Pills Button</h3>
-                                        with pills <code>&lt;x-button color="$color" pills&gt;Save&lt;/x-button&gt;</code>
-                                        <hr>
-                                        <x-button color="primary" pills>Primary</x-button>
-                                        <x-button color="secondary" pills>Secondary</x-button>
-                                        <x-button color="default" pills>Default</x-button>
-                                        <x-button color="success" pills>Success</x-button>
-                                        <x-button color="warning" pills>Warning</x-button>
-                                        <x-button color="info" pills>Info</x-button>
-                                        <x-button color="danger" pills>Danger</x-button>
-                                        <x-button color="dark" pills>Dark</x-button>
-                                        <x-button color="light" pills>Light</x-button>
-                                        <hr>
-                                        <h3>Button with ICON</h3>
-                                        with icon <code>&lt;x-button color="$color"
-                                            icon="$icon"&gt;Save&lt;/x-button&gt;</code>
-                                        <hr>
-                                        <x-button color="primary" icon="print">Print</x-button>
-                                        <x-button color="secondary" icon="volume-mute">Mute</x-button>
-                                        <x-button color="default" icon="check">Submit</x-button>
-                                        <x-button color="success" icon="download">Download</x-button>
-                                        <x-button color="warning" icon="exclamation-triangle">Scan
-                                            Device</x-button>
-                                        <x-button color="info" icon="bug">Report Bug</x-button>
-                                        <x-button color="danger" icon="times">Delete</x-button>
-                                        <x-button color="dark" icon="eject">Eject</x-button>
-                                        <hr>
-                                        <h3>Icon Button</h3>
-                                        <x-row-column :column="2">
-                                            <x-slot name="column1">
-                                                with btn-icon <code>&lt;x-button color="$color" icon="$icon"
-                                                    btnicon/&gt;</code>
-                                            </x-slot>
-                                            <x-slot name="column2">
-                                                <x-button color="primary" icon="print" btnicon />
-                                                <x-button color="secondary" icon="volume-mute" btnicon />
-                                                <x-button color="default" icon="check" btnicon />
-                                                <x-button color="success" icon="download" btnicon />
-                                                <x-button color="warning" icon="exclamation-triangle" btnicon />
-                                                <x-button color="info" icon="bug" btnicon />
-                                                <x-button color="danger" icon="times" btnicon />
-                                                <x-button color="dark" icon="eject" btnicon />
-                                            </x-slot>
-                                        </x-row-column>
-                                        <hr>
-                                        <x-row-column :column="2">
-                                            <x-slot name="column1">
-                                                with btn-icon and rounded-circle <br><code>&lt;x-button href="#"
-                                                    color="$color" icon="$icon" btnicon
-                                                    circle/&gt;</code>
-                                            </x-slot>
-                                            <x-slot name="column2">
-                                                <x-button href="#" color="primary" icon="print" btnicon circle />
-                                                <x-button href="#" color="secondary" icon="volume-mute" btnicon
-                                                    circle />
-                                                <x-button href="#" color="default" icon="check" btnicon circle />
-                                                <x-button href="#" color="success" icon="download" btnicon
-                                                    circle />
-                                                <x-button href="#" color="warning" icon="exclamation-triangle"
-                                                    btnicon circle />
-                                                <x-button href="#" color="info" icon="bug" btnicon circle />
-                                                <x-button href="#" color="danger" icon="times" btnicon circle />
-                                                <x-button href="#" color="dark" icon="eject" btnicon circle />
-                                            </x-slot>
-                                        </x-row-column>
-                                        <hr>
-                                        <h3>Button Size</h3>
-                                        <x-row-column :column="2">
-                                            <x-slot name="column1">
-                                                size lg (large)<code>&lt;x-button
-                                                    size="lg"&gt;Large&lt;/x-button&gt;</code>
-                                                <x-button size="lg">Large</x-button>
-                                            </x-slot>
-                                            <x-slot name="column2">
-                                                size (default) <code>&lt;x-button&gt;Default&lt;/x-button&gt;</code>
-                                                <x-button>Default</x-button>
-                                            </x-slot>
-                                        </x-row-column>
-                                        <hr>
-                                        <x-row-column :column="2">
-                                            <x-slot name="column1">
-                                                size sm (small)<code>&lt;x-button
-                                                    size="sm"&gt;Small&lt;/x-button&gt;</code>
-                                                <x-button size="sm">Small</x-button>
-                                            </x-slot>
-                                            <x-slot name="column2">
-                                                size xs (smallest) <code>&lt;x-button
-                                                    size="xs"&gt;Smallest&lt;/x-button&gt;</code>
-                                                <x-button size="xs">Smallest</x-button>
-                                            </x-slot>
-                                        </x-row-column>
-                                        <hr>
-                                        <h3>Button Block</h3>
-                                        <x-row-column :column="2">
-                                            <x-slot name="column1">
-                                                size lg (large) + pills <code>&lt;x-button
-                                                    size="lg" block pills&gt;Large&lt;/x-button&gt;</code>
-                                                <x-button size="lg" block pills>Large</x-button>
-                                            </x-slot>
-                                            <x-slot name="column2">
-                                                size (default) + style <code>&lt;x-button block
-                                                    style&gt;Default&lt;/x-button&gt;</code>
-                                                <x-button block style>Default</x-button>
-                                            </x-slot>
-                                        </x-row-column>
-                                        <hr>
-                                        <x-row-column :column="2">
-                                            <x-slot name="column1">
-                                                size sm (small)<code>&lt;x-button
-                                                    color="danger" size="sm" block&gt;Small&lt;/x-button&gt;</code>
-                                                <x-button color="danger" size="sm" block>Small</x-button>
-                                            </x-slot>
-                                            <x-slot name="column2">
-                                                size xs (smallest) + href="#" <code>&lt;x-button
-                                                    href="#" size="xs"
-                                                    block&gt;Smallest&lt;/x-button&gt;</code>
-                                                <x-button href="#" size="xs" block>Smallest</x-button>
-                                            </x-slot>
-                                        </x-row-column>
-                                        <hr>
-                                        <h3>Hover dot effect</h3>
-                                        <x-row-column :column="2">
-                                            <x-slot name="column1">
-                                                <code>&lt;x-button
-                                                    href="javascript:void(0);" color="$color" size="$size"
-                                                    icon="$icon" btnicon circle
-                                                    effect /&gt;</code>
-                                                <hr>
-                                                <x-button href="javascript:void(0);" color="primary" size="lg"
-                                                    icon="users" btnicon circle effect />
-                                                <x-button href="javascript:void(0);" color="success" size="lg"
-                                                    icon="save" btnicon circle effect />
-                                                <x-button href="javascript:void(0);" color="secondary" size="lg"
-                                                    icon="home" btnicon circle effect />
-                                            </x-slot>
-                                            <x-slot name="column2">
-                                                <code>&lt;x-button
-                                                    href="javascript:void(0);" color="$color" size="$size"
-                                                    icon="$icon" btnicon circle
-                                                    effect /&gt;</code>
-                                                <hr>
-                                                <x-button href="javascript:void(0);" color="danger" size="lg"
-                                                    icon="trash" btnicon circle effect />
-                                            </x-slot>
-                                        </x-row-column>
-                                        <hr>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        {{-- icon --}}
+                        <span class='fw-900 fs-xxl'> 1. Icon</span>
+                        <hr>
+                        <h5 class="text-info">Component</h5>
+                        <code>x-icon</code>
+                        <hr>
+                        <h5 class="text-info">Variabel</h5>
+                        <code>fal = false</code><br>
+                        <code>far = false</code><br>
+                        <code>fas = false</code><br>
+                        <code>fad = false</code><br>
+                        <code>fab = false</code><br>
+                        <code>size = "2x - 9x"</code><br>
+                        <code>color = success, warning, danger, info, primary, secondary</code><br>
+                        <code>spin = false</code><br>
+                        <code>pulse = false</code><br>
+                        <code>beat = false</code><br>
+                        <code>flip = false</code><br>
+                        <code>shake = false</code><br>
+                        <code>rotate_90 = false</code><br>
+                        <code>rotate_180 = false</code><br>
+                        <code>rotate_270 = false</code><br>
+                        <hr>
+                        <h5 class="text-info">Example</h5>
+                        <code>
+                            &lt;x-icon fal name="coffee" size="2x"
+                            color="danger"
+                            /&gt;
+                        </code>
+                        <x-icon fal name="coffee" size="2x" color="danger" /><br>
+                        <code>
+                            &lt;x-icon fas name="cog" size="2x"
+                            color="primary" spin /&gt;
+                        </code>
+                        <x-icon fas name="cog" size="2x" color="primary" spin /><br>
+                        <code>
+                            &lt;x-icon fad name="car-bump" size="2x"
+                            color="success" /&gt;
+                        </code>
+                        <x-icon fad name="car-bump" size="2x" color="success" /><br>
+                        <hr>
+                        <a href="/icons_fontawesome_light" target="_blank">Reference</a>
+                        <hr>
+                        {{-- Number Style --}}
+                        <span class='fw-900 fs-xxl'>2. Number Style</span>
+                        <hr>
+                        <h5 class="text-info">Component</h5>
+                        <code>x-number-style</code>
+                        <hr>
+                        <h5 class="text-info">variabel</h5>
+                        <code>color = success, warning, danger, info, primary, secondary</code>
+                        <hr>
+                        <h5 class="text-info">Example</h5>
+                        <code>
+                            &lt;x-number-style color="danger" :label="__('1')" /&gt;
+                        </code>
+                        <hr>
+                        <x-number-style color="success" :label="__('11')" />
+                        <x-number-style color="info" :label="__('25')" />
+                        <x-number-style color="danger" :label="__('1')" />
+                        <hr>
+
+                        {{-- Number Style --}}
+                        <span class='fw-900 fs-xxl'>3. Alert</span>
+                        <hr>
+                        <h5 class="text-info">Component</h5>
+                        <code>x-alert-messages</code>
+                        <hr>
+                        <h5 class="text-info">Variabel</h5>
+                        <hr>
+                        <h5 class="text-info">Example</h5>
+                        <code>&lt;x-alert-messages color="danger" dismissible :title="__('Error!!')"&gt;</code>
+                        <x-alert-messages color="danger" dismissible :title="__('Error!!')">
+                            <strong>Well Done!</strong> You error read this important alert message.
+                        </x-alert-messages>
+                        <code>&lt;x-alert-messages color="warning" :title="__('Attention!!')"&gt;</code>
+                        <x-alert-messages color="warning" :title="__('Attention!!')">
+                            <strong>Well Done!</strong> You warning read this important alert message.
+                        </x-alert-messages>
+                        <code>&lt;x-alert-messages color="info" bground :title="__('Information!!')"&gt;</code>
+                        <x-alert-messages color="info" bground dismissible :title="__('Information!!')">
+                            <strong>Well Done!</strong> You information read this important alert message.
+                        </x-alert-messages>
+                        <code>&lt;x-alert-messages color="success" bground :title="__('Success!!')"&gt;</code>
+                        <x-alert-messages color="success" bground dismissible :title="__('Success!!')">
+                            <strong>Well Done!</strong> You successfully read this important alert message.
+                        </x-alert-messages>
+                        <code>&lt;x-alert-messages color="dark" bground&gt;</code>
+                        <x-alert-messages color="dark" bground>
+                            <span class="h6 m-0 fw-700">Task 55% Complete</span>
+                            <div class="progress mt-1 progress-xs">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-success-600"
+                                    role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0"
+                                    aria-valuemax="100"></div>
+                            </div>
+                        </x-alert-messages>
+                        {{-- button --}}
+                        <span class='fw-900 fs-xxl'> 4. Button</span>
+                        <hr>
+                        <h5 class="text-info">Default Button & Outline Button</h5>
+                        with color <code>&lt;x-button color="$color" :label="__('Primary')" /&gt;</code>
+                        <hr>
+                        <x-button color="primary" :label="__('Primary')" />
+                        <x-button color="secondary" :label="__('Secondary')" />
+                        <x-button color="default" :label="__('Default')" />
+                        <x-button color="success" :label="__('Success')" />
+                        <x-button color="warning" :label="__('Warning')" />
+                        <x-button color="info" :label="__('Info')" />
+                        <x-button color="danger" :label="__('Danger')" />
+                        <x-button color="dark" :label="__('Dark')" />
+                        <x-button color="light" :label="__('Light')" />
+                        <hr>
+                        with style outline <code>&lt;x-button style
+                            color="$color" :label="__('Primary')" /&gt;</code>
+                        <hr>
+                        <x-button style color="primary" :label="__('Primary')" />
+                        <x-button style color="secondary" :label="__('Secondary')" />
+                        <x-button style color="default" :label="__('Default')" />
+                        <x-button style color="success" :label="__('Success')" />
+                        <x-button style color="warning" :label="__('Warning')" />
+                        <x-button style color="info" :label="__('Info')" />
+                        <x-button style color="danger" :label="__('Danger')" />
+                        <x-button style color="dark" :label="__('Dark')" />
+                        <x-button style color="light" :label="__('Light')" />
+                        <br>
+                        <div class="panel-tag mt-2 mb-2">for outline buttons also applies to btn-icon,
+                            size, rounded-circle, btn-pills</div>
+                        <hr class='mt-0'>
+                        <h5 class="text-info">Pills Button</h5>
+                        with pills <code>&lt;x-button color="$color" pills :label="__('Primary')"
+                            /&gt;</code>
+                        <hr>
+                        <x-button color="primary" pills :label="__('Primary')" />
+                        <x-button color="secondary" pills :label="__('Secondari')" />
+                        <x-button color="default" pills :label="__('Default')" />
+                        <x-button color="success" pills :label="__('Success')" />
+                        <x-button color="warning" pills :label="__('Warning')" />
+                        <x-button color="info" pills :label="__('Info')" />
+                        <x-button color="danger" pills :label="__('Danger')" />
+                        <x-button color="dark" pills :label="__('Dark')" />
+                        <x-button color="light" pills :label="__('Light')" />
+                        <hr>
+                        <h5 class="text-info">Button with ICON</h5>
+                        with icon <code>&lt;x-button color="$color"
+                            icon="$icon" :label="__('Primary')" /&gt;</code>
+                        <hr>
+                        <x-button color="primary" icon="print" :label="__('Print')" />
+                        <x-button color="secondary" icon="volume-mute" :label="__('Mute')" />
+                        <x-button color="default" icon="check" :label="__('Submit')" />
+                        <x-button color="success" icon="download" :label="__('Download')" />
+                        <x-button color="warning" icon="exclamation-triangle" :label="__('Scan Device')" />
+                        <x-button color="info" icon="bug" :label="__('Report Bug')" />
+                        <x-button color="danger" icon="times" :label="__('Delete')" />
+                        <x-button color="dark" icon="eject" :label="__('Eject')" />
+                        <hr>
+                        <h5 class="text-info">Icon Button</h5>
+                        <x-row-column :column="2">
+                            <x-slot name="column1">
+                                with btn-icon <code>&lt;x-button color="$color" icon="$icon"
+                                    btnicon /&gt;</code>
+                            </x-slot>
+                            <x-slot name="column2">
+                                <x-button color="primary" icon="print" btnicon />
+                                <x-button color="secondary" icon="volume-mute" btnicon />
+                                <x-button color="default" icon="check" btnicon />
+                                <x-button color="success" icon="download" btnicon />
+                                <x-button color="warning" icon="exclamation-triangle" btnicon />
+                                <x-button color="info" icon="bug" btnicon />
+                                <x-button color="danger" icon="times" btnicon />
+                                <x-button color="dark" icon="eject" btnicon />
+                            </x-slot>
+                        </x-row-column>
+                        <hr>
+                        <x-row-column :column="2">
+                            <x-slot name="column1">
+                                with btn-icon and rounded-circle <br><code>&lt;x-button href="#"
+                                    color="$color" icon="$icon" btnicon
+                                    circle /&gt;</code>
+                            </x-slot>
+                            <x-slot name="column2">
+                                <x-button href="#" color="primary" icon="print" btnicon circle />
+                                <x-button href="#" color="secondary" icon="volume-mute" btnicon circle />
+                                <x-button href="#" color="default" icon="check" btnicon circle />
+                                <x-button href="#" color="success" icon="download" btnicon circle />
+                                <x-button href="#" color="warning" icon="exclamation-triangle" btnicon circle />
+                                <x-button href="#" color="info" icon="bug" btnicon circle />
+                                <x-button href="#" color="danger" icon="times" btnicon circle />
+                                <x-button href="#" color="dark" icon="eject" btnicon circle />
+                            </x-slot>
+                        </x-row-column>
+                        <hr>
+                        <h5 class="text-info">Button Size</h5>
+                        <x-row-column :column="2">
+                            <x-slot name="column1">
+                                size lg (large)<code>&lt;x-button
+                                    size="lg" :label="__('Large')" /&gt;</code>
+                                <x-button size="lg" :label="__('Large')" />
+                            </x-slot>
+                            <x-slot name="column2">
+                                size (default) <code>&lt;x-button :label="__('Default')" /&gt;</code>
+                                <x-button :label="__('Default')" />
+                            </x-slot>
+                        </x-row-column>
+                        <hr>
+                        <x-row-column :column="2">
+                            <x-slot name="column1">
+                                size sm (small)<code>&lt;x-button
+                                    size="sm" :label="__('Small')" /&gt;</code>
+                                <x-button size="sm" :label="__('Small')" />
+                            </x-slot>
+                            <x-slot name="column2">
+                                size xs (smallest) <code>&lt;x-button
+                                    size="xs" :label="__('Smallest')" /&gt;</code>
+                                <x-button size="xs" :label="__('Smallest')" />
+                            </x-slot>
+                        </x-row-column>
+                        <hr>
+                        <h5 class="text-info">Button Block</h5>
+                        <x-row-column :column="2">
+                            <x-slot name="column1">
+                                size lg (large) + pills <code>&lt;x-button
+                                    size="lg" block pills&gt;Large&lt;/x-button&gt;</code>
+                                <x-button size="lg" block pills :label="__('Large')" />
+                            </x-slot>
+                            <x-slot name="column2">
+                                size (default) + style <code>&lt;x-button block
+                                    style&gt;Default&lt;/x-button&gt;</code>
+                                <x-button block style :label="__('Default')" />
+                            </x-slot>
+                        </x-row-column>
+                        <hr>
+                        <x-row-column :column="2">
+                            <x-slot name="column1">
+                                size sm (small)<code>&lt;x-button
+                                    color="danger" size="sm" block :label="__('Small')"
+                                    /&gt;</code>
+                                <x-button color="danger" size="sm" block :label="__('Small')" />
+                            </x-slot>
+                            <x-slot name="column2">
+                                size xs (smallest) + href="#" <code>&lt;x-button
+                                    href="#" size="xs"
+                                    block :label="__('Smallest')" /&gt;</code>
+                                <x-button href="#" size="xs" block :label="__('Smallest')" />
+                            </x-slot>
+                        </x-row-column>
+                        <hr>
+                        <h5 class="text-info">Hover dot effect</h5>
+                        <x-row-column :column="2">
+                            <x-slot name="column1">
+                                <code>&lt;x-button
+                                    href="javascript:void(0);" color="$color" size="$size"
+                                    icon="$icon" btnicon circle
+                                    effect /&gt;</code>
+                                <hr>
+                                <x-button href="javascript:void(0);" color="primary" size="lg" icon="users"
+                                    btnicon circle effect />
+                                <x-button href="javascript:void(0);" color="success" size="lg" icon="save"
+                                    btnicon circle effect />
+                                <x-button href="javascript:void(0);" color="secondary" size="lg" icon="home"
+                                    btnicon circle effect />
+                            </x-slot>
+                            <x-slot name="column2">
+                                <code>&lt;x-button
+                                    href="javascript:void(0);" color="$color" size="$size"
+                                    icon="$icon" btnicon circle
+                                    effect /&gt;</code>
+                                <hr>
+                                <x-button href="javascript:void(0);" color="danger" size="lg" icon="trash"
+                                    btnicon circle effect />
+                            </x-slot>
+                        </x-row-column>
+                        <hr>
                     </div>
                 </div>
             </x-slot>
