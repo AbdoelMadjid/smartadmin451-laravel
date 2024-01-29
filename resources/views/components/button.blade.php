@@ -17,6 +17,12 @@
     'style' => false,
     'block' => false,
     'effect' => false,
+    'dropdowntoggle' => false,
+    'toggle' => null,
+    'haspopup' => null,
+    'expanded' => null,
+    'display' => null,
+    'items' => [],
 ])
 
 @php
@@ -26,18 +32,35 @@
         $href = url($url);
     }
 
-    $attributes = $attributes->class([$style ? 'btn btn-outline-' . $color : 'btn btn-' . $color, 'btn-' . $size => $size, 'btn-pills' => $pills, 'btn-icon' => $btnicon, 'rounded-circle' => $circle, 'btn-block' => $block, 'hover-effect-dot' => $effect])->merge([
+    $attributes = $attributes->class([$style ? 'btn btn-outline-' . $color : 'btn btn-' . $color, 'btn-' . $size => $size, 'btn-pills' => $pills, 'btn-icon' => $btnicon, 'rounded-circle' => $circle, 'btn-block' => $block, 'hover-effect-dot' => $effect, 'dropdown-toggle' => $dropdowntoggle])->merge([
         'type' => !$href ? $type : null,
         'href' => $href,
-        'data-bs-dismiss' => $dismiss,
-        'data-bs-toggle' => $toggle,
+        'data-dismiss' => $dismiss,
+        'data-toggle' => $toggle,
+        'aria-haspopup' => $haspopup,
+        'aria-expanded' => $expanded,
+        'data-display' => $display,
         'wire:click' => $click,
         'onclick' => $confirm ? 'confirm(\'' . __('Are you sure?') . '\') || event.stopImmediatePropagation()' : null,
     ]);
 @endphp
+
 
 <{{ $href ? 'a' : 'button' }} {{ $attributes }}>
     <x-icon fal :name="$icon" />
 
     {{ $label ?? $slot }}
     </{{ $href ? 'a' : 'button' }}>
+
+    @if ($expanded)
+        <div class="dropdown-menu {{ $display ? 'dropdown-menu-right dropdown-menu-lg-left' : '' }}">
+            @foreach ($items as $item)
+                @if ($item === 'divider')
+                    <div class="dropdown-divider"></div>
+                @else
+                    {{-- Make href dynamic --}}
+                    <a class="dropdown-item" href="{{ $item['href'] ?? '#' }}">{{ $item['label'] }}</a>
+                @endif
+            @endforeach
+        </div>
+    @endif

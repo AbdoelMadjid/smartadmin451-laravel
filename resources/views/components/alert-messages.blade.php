@@ -44,7 +44,7 @@
             </div>
         @else
         @endif
-        <div class="flex-1">
+        <div class="flex-1 ml-1">
             @if ($title)
                 <span class="h4 color-{{ $color }}-900">{!! $title !!}</span>
                 <br>

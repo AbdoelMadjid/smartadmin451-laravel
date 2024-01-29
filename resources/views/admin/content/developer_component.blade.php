@@ -17,18 +17,7 @@
             ])
             @endcomponent
         </div>
-        <x-alert-messages color="primary" :title="__('Pro Tip!!!')">
-            <p>
-                Laravel has provided one of the interesting features in its templating blade, namely Components.
-                Components allow us to chop up code so that it can be reused without having to rewrite all the
-                parts completely. Similar to sections and layouts which are also part of the blade tempalting
-                feature.
-            </p>
-            <p class="m-0">
-                Follow a slogal with a useful link or call to action <a href="#" target="_blank">Call to
-                    action >></a>
-            </p>
-        </x-alert-messages>
+
 
         <div class="alert alert-primary">
             <div class="d-flex flex-start w-100">
@@ -222,6 +211,23 @@
                                     aria-valuemax="100"></div>
                             </div>
                         </x-alert-messages>
+                        <code>&lt;x-alert-messages color="primary" :title="__('Pro Tip!!!')"&gt;</code>
+                        <x-alert-messages color="secondary" :title="__('Pro Tip!!!')">
+                            <p>
+                                Laravel has provided one of the interesting features in its templating blade, namely
+                                Components.
+                                Components allow us to chop up code so that it can be reused without having to rewrite all
+                                the
+                                parts completely. Similar to sections and layouts which are also part of the blade
+                                tempalting
+                                feature.
+                            </p>
+                            <p class="m-0">
+                                Follow a slogal with a useful link or call to action <a href="#"
+                                    target="_blank">Call to
+                                    action >></a>
+                            </p>
+                        </x-alert-messages>
                         {{-- button --}}
                         <span class='fw-900 fs-xxl'> 4. Button</span>
                         <hr>
@@ -386,18 +392,154 @@
                                     btnicon circle effect />
                                 <x-button href="javascript:void(0);" color="secondary" size="lg" icon="home"
                                     btnicon circle effect />
-                            </x-slot>
-                            <x-slot name="column2">
-                                <code>&lt;x-button
-                                    href="javascript:void(0);" color="$color" size="$size"
-                                    icon="$icon" btnicon circle
-                                    effect /&gt;</code>
-                                <hr>
                                 <x-button href="javascript:void(0);" color="danger" size="lg" icon="trash"
                                     btnicon circle effect />
                             </x-slot>
+                            <x-slot name="column2">
+                            </x-slot>
                         </x-row-column>
                         <hr>
+                        <h5 class="text-info">Button Dropdown</h5>
+                        <hr>
+                        <x-row-column :column="4">
+                            <x-slot name="column1">
+                                <h5> Dropdown Default</h5>
+                                <code>
+                                    &lt;div class="btn-group"&gt;
+                                    &lt;x-button color="primary" icon="print" :label="__('Print')" dropdowntoggle
+                                    toggle="dropdown" haspopup="true" expanded="false"
+                                    :items="[
+                                        ['label' => 'Action', 'href' => 'javascript:void(0);'],
+                                        ['label' => 'Another action', 'href' => 'javascript:void(0);'],
+                                        ['label' => 'Something else here', 'href' => 'javascript:void(0);'],
+                                        'divider',
+                                        ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
+                                    ]"
+                                    /&gt;
+                                    &lt;/div&gt;
+                                </code>
+                                <hr>
+                                <div class="btn-group">
+                                    <x-button color="primary" icon="print" :label="__('Print')" dropdowntoggle
+                                        toggle="dropdown" haspopup="true" expanded="false" :items="[
+                                            ['label' => 'Action', 'href' => 'javascript:void(0);'],
+                                            ['label' => 'Another action', 'href' => 'javascript:void(0);'],
+                                            ['label' => 'Something else here', 'href' => 'javascript:void(0);'],
+                                            'divider',
+                                            ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
+                                        ]" />
+                                </div>
+                            </x-slot>
+                            <x-slot name="column2">
+                                <h5> Dropdown Left Show</h5>
+                                <code>
+                                    &lt;div class="btn-group dropleft"&gt; &lt;x-button color="danger"
+                                    :label="__('Pilihan')" dropdowntoggle toggle="dropdown" haspopup="true"
+                                    expanded="false"
+                                    :items="[
+                                        ['label' => 'Action', 'href' => 'javascript:void(0);'],
+                                        ['label' => 'Another action', 'href' => 'javascript:void(0);'],
+                                        ['label' => 'Something else here', 'href' => 'javascript:void(0);'],
+                                        'divider',
+                                        ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
+                                    ]"
+                                    /&gt; &lt;/div&gt;
+                                </code>
+                                <hr>
+                                <div class="btn-group dropleft">
+                                    <x-button color="danger" :label="__('Pilihan')" dropdowntoggle toggle="dropdown"
+                                        haspopup="true" expanded="false" :items="[
+                                            ['label' => 'Action', 'href' => 'javascript:void(0);'],
+                                            ['label' => 'Another action', 'href' => 'javascript:void(0);'],
+                                            ['label' => 'Something else here', 'href' => 'javascript:void(0);'],
+                                            'divider',
+                                            ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
+                                        ]" />
+                                </div>
+                            </x-slot>
+                            <x-slot name="column3">
+                                <h5> Dropdown Right Show</h5>
+                                <code>
+                                    &lt;div class="btn-group dropright"&gt;
+                                    &lt;x-button color="warning" :label="__('Pilihan')" dropdowntoggle toggle="dropdown"
+                                    haspopup="true" expanded="false"
+                                    :items="[
+                                        ['label' => 'Action', 'href' => 'javascript:void(0);'],
+                                        ['label' => 'Another action', 'href' => 'javascript:void(0);'],
+                                        ['label' => 'Something else here', 'href' => 'javascript:void(0);'],
+                                        'divider',
+                                        ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
+                                    ]"
+                                    /&gt;
+                                    &lt;/div&gt;
+                                </code>
+                                <hr>
+                                <div class="btn-group dropright">
+                                    <x-button color="warning" :label="__('Pilihan')" dropdowntoggle toggle="dropdown"
+                                        haspopup="true" expanded="false" :items="[
+                                            ['label' => 'Action', 'href' => 'javascript:void(0);'],
+                                            ['label' => 'Another action', 'href' => 'javascript:void(0);'],
+                                            ['label' => 'Something else here', 'href' => 'javascript:void(0);'],
+                                            'divider',
+                                            ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
+                                        ]" />
+                                </div>
+                            </x-slot>
+                            <x-slot name="column4">
+                                <h5> Dropdown Static Show</h5>
+                                <code>
+                                    &lt;div class="btn-group"&gt;
+                                    &lt;x-button color="secondary" :label="__('Pilihan')" dropdowntoggle
+                                    toggle="dropdown"
+                                    haspopup="true" expanded="false" display="static"
+                                    :items="[
+                                        ['label' => 'Action', 'href' => 'javascript:void(0);'],
+                                        ['label' => 'Another action', 'href' => 'javascript:void(0);'],
+                                        ['label' => 'Something else here', 'href' => 'javascript:void(0);'],
+                                        'divider',
+                                        ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
+                                    ]"
+                                    /&gt;
+                                    &lt;/div&gt;
+                                </code>
+                                <hr>
+                                <div class="btn-group">
+                                    <x-button color="secondary" :label="__('Pilihan')" dropdowntoggle toggle="dropdown"
+                                        haspopup="true" expanded="false" display="static" :items="[
+                                            ['label' => 'Action', 'href' => 'javascript:void(0);'],
+                                            ['label' => 'Another action', 'href' => 'javascript:void(0);'],
+                                            ['label' => 'Something else here', 'href' => 'javascript:void(0);'],
+                                            'divider',
+                                            ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
+                                        ]" />
+                                </div>
+                            </x-slot>
+                        </x-row-column>
+
+
+                        <hr>
+
+
+                        <div class="btn-group">
+                            <x-button color="secondary" icon="plus" btnicon circle toggle="dropdown" haspopup="true"
+                                expanded="false" display="static" :items="[
+                                    ['label' => 'Action', 'href' => 'javascript:void(0);'],
+                                    ['label' => 'Another action', 'href' => 'javascript:void(0);'],
+                                    ['label' => 'Something else here', 'href' => 'javascript:void(0);'],
+                                    'divider',
+                                    ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
+                                ]" />
+                        </div>
+                        <div class="btn-group dropright">
+                            <x-button color="info" icon="plus" btnicon circle toggle="dropdown" haspopup="true"
+                                expanded="false" display="static" :items="[
+                                    ['label' => 'Action', 'href' => 'javascript:void(0);'],
+                                    ['label' => 'Another action', 'href' => 'javascript:void(0);'],
+                                    ['label' => 'Something else here', 'href' => 'javascript:void(0);'],
+                                    'divider',
+                                    ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
+                                ]" />
+                        </div>
                     </div>
                 </div>
             </x-slot>
