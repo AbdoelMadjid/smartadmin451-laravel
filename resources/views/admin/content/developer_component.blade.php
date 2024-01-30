@@ -50,10 +50,9 @@
             <x-slot name="column1">
                 <div id="panel-1" class="panel">
                     <div class="panel-hdr">
-                        <h2>
-                            <i class="fal fa-users mr-2"></i>
-                            Default <span class="fw-300"><i>Panel</i></span>
-                        </h2>
+                        <x-title :l="2" :title="__('Default')">
+                            Panel
+                        </x-title>
                         <div class="panel-toolbar">
                             <select class="custom-select custom-select-sm">
                                 <option selected="">Select</option>
@@ -74,8 +73,8 @@
                                 <i class="fal fa-ellipsis-v color-fusion-300"></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-animated dropdown-menu-right">
-                                <a class="dropdown-item" href="/dashboard"> <i class="fal fa-reply color-fusion-300"></i>
-                                    Kembali</a>
+                                <a class="dropdown-item" href="/dashboard">
+                                    <i class="fal fa-reply color-fusion-300"></i>Kembali</a>
                                 <a class="dropdown-item" href="#">Another action</a>
                                 <div class="dropdown-divider m-0"></div>
                                 <a class="dropdown-item" href="#">Something else here</a>
@@ -93,7 +92,13 @@
                                 padding.
                             </div>
                             <p>
-                                Default panel text.
+                                <x-title icon="home" :title="__('Example')">
+                                    title
+                                </x-title>
+                                <x-title :l="2" icon="users" class="mb-2 mt-3" danger>
+                                    Daftar Users
+                                </x-title>
+                                <x-title icon="users" :title="__('Daftar User Siswa')" info />
                             </p>
                         </div>
                         <div
