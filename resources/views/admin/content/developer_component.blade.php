@@ -92,13 +92,15 @@
                                 padding.
                             </div>
                             <p>
+                                ini konten panel
+                                <hr>
                                 <x-title icon="home" :title="__('Example')">
-                                    title
+                                    Table
                                 </x-title>
-                                <x-title :l="2" icon="users" class="mb-2 mt-3" danger>
+                                <x-title :l="2" icon="users" class="mb-2 mt-3" danger md>
                                     Daftar Users
                                 </x-title>
-                                <x-title icon="users" :title="__('Daftar User Siswa')" info />
+                                <x-title icon="users" :title="__('Daftar User Siswa')" info xxl></x-title>
                             </p>
                         </div>
                         <div
