@@ -30,7 +30,9 @@
                 </div>
                 <div class="d-flex flex-fill">
                     <div class="flex-fill">
-                        <span class="h5">Pro Tip!</span>
+                        <div> </div>
+                        <x-div :text="__('Pro Tip!')" class="h5" />
+                        <x-div div :text="__('Pro Tip!')" class="h5" />
                         <p>
                             Laravel has provided one of the interesting features in its templating blade, namely Components.
                             Components allow us to chop up code so that it can be reused without having to rewrite all the
@@ -145,6 +147,24 @@
                 </x-panel.show>
             </x-slot>
             <x-slot name="column2">
+                <x-panel.show title="Component" subtitle="Div or Span">
+                    <x-title :l="5" :title="__('Example Span')" info class="mb-2" />
+                    Script : <code>
+                        &lt;x-div :text="__('Pro Tip!')" class="h5" /&gt;
+                    </code>
+                    <br>
+                    HTML : <code>&lt;span class="h5"&gt;Pro Tip!&lt;/span&gt;</code> <br>Output : <x-div
+                        :text="__('Pro Tip!')" class="h5" />
+                    <hr>
+                    <x-title :l="5" :title="__('Example Div')" info class="mb-2" />
+                    Script <code>
+                        &lt;x-div div :text="__('Pro Tip!')" class="h5" /&gt;
+                    </code>
+                    <br>
+                    HTML : <code>&lt;div class="h5"&gt;Pro Tip!&lt;/div&gt;</code> <br>Output : <x-div div
+                        :text="__('Pro Tip!')" class="h5" />
+                    <hr>
+                </x-panel.show>
                 <x-panel.show title="Component" subtitle="Icon">
                     <x-title :l="5" :title="__('Component')" info class="mb-2" />
                     <code>x-icon</code>
@@ -209,283 +229,324 @@
 
         <x-row-column :column="1">
             <x-slot name='column1'>
-                <x-panel.show title="Component" subtitle="Number Style">
-                    {{-- button --}}
-                    <hr>
-                    <h5 class="text-info">Default Button & Outline Button</h5>
-                    with color <code>&lt;x-button color="$color" :label="__('Primary')" /&gt;</code>
-                    <hr>
-                    <x-button color="primary" :label="__('Primary')" />
-                    <x-button color="secondary" :label="__('Secondary')" />
-                    <x-button color="default" :label="__('Default')" />
-                    <x-button color="success" :label="__('Success')" />
-                    <x-button color="warning" :label="__('Warning')" />
-                    <x-button color="info" :label="__('Info')" />
-                    <x-button color="danger" :label="__('Danger')" />
-                    <x-button color="dark" :label="__('Dark')" />
-                    <x-button color="light" :label="__('Light')" />
-                    <hr>
-                    with style outline <code>&lt;x-button style
-                        color="$color" :label="__('Primary')" /&gt;</code>
-                    <hr>
-                    <x-button style color="primary" :label="__('Primary')" />
-                    <x-button style color="secondary" :label="__('Secondary')" />
-                    <x-button style color="default" :label="__('Default')" />
-                    <x-button style color="success" :label="__('Success')" />
-                    <x-button style color="warning" :label="__('Warning')" />
-                    <x-button style color="info" :label="__('Info')" />
-                    <x-button style color="danger" :label="__('Danger')" />
-                    <x-button style color="dark" :label="__('Dark')" />
-                    <x-button style color="light" :label="__('Light')" />
-                    <br>
-                    <div class="panel-tag mt-2 mb-2">for outline buttons also applies to btn-icon,
-                        size, rounded-circle, btn-pills</div>
-                    <hr class='mt-0'>
-                    <h5 class="text-info">Pills Button</h5>
-                    with pills <code>&lt;x-button color="$color" pills :label="__('Primary')"
-                        /&gt;</code>
-                    <hr>
-                    <x-button color="primary" pills :label="__('Primary')" />
-                    <x-button color="secondary" pills :label="__('Secondari')" />
-                    <x-button color="default" pills :label="__('Default')" />
-                    <x-button color="success" pills :label="__('Success')" />
-                    <x-button color="warning" pills :label="__('Warning')" />
-                    <x-button color="info" pills :label="__('Info')" />
-                    <x-button color="danger" pills :label="__('Danger')" />
-                    <x-button color="dark" pills :label="__('Dark')" />
-                    <x-button color="light" pills :label="__('Light')" />
-                    <hr>
-                    <h5 class="text-info">Button with ICON</h5>
-                    with icon <code>&lt;x-button color="$color"
-                        icon="$icon" :label="__('Primary')" /&gt;</code>
-                    <hr>
-                    <x-button color="primary" icon="print" :label="__('Print')" />
-                    <x-button color="secondary" icon="volume-mute" :label="__('Mute')" />
-                    <x-button color="default" icon="check" :label="__('Submit')" />
-                    <x-button color="success" icon="download" :label="__('Download')" />
-                    <x-button color="warning" icon="exclamation-triangle" :label="__('Scan Device')" />
-                    <x-button color="info" icon="bug" :label="__('Report Bug')" />
-                    <x-button color="danger" icon="times" :label="__('Delete')" />
-                    <x-button color="dark" icon="eject" :label="__('Eject')" />
-                    <hr>
-                    <h5 class="text-info">Icon Button</h5>
-                    <x-row-column :column="2">
-                        <x-slot name="column1">
-                            with btn-icon <code>&lt;x-button color="$color" icon="$icon"
-                                btnicon /&gt;</code>
-                        </x-slot>
-                        <x-slot name="column2">
-                            <x-button color="primary" icon="print" btnicon />
-                            <x-button color="secondary" icon="volume-mute" btnicon />
-                            <x-button color="default" icon="check" btnicon />
-                            <x-button color="success" icon="download" btnicon />
-                            <x-button color="warning" icon="exclamation-triangle" btnicon />
-                            <x-button color="info" icon="bug" btnicon />
-                            <x-button color="danger" icon="times" btnicon />
-                            <x-button color="dark" icon="eject" btnicon />
-                        </x-slot>
-                    </x-row-column>
-                    <hr>
-                    <x-row-column :column="2">
-                        <x-slot name="column1">
-                            with btn-icon and rounded-circle <br><code>&lt;x-button href="#"
-                                color="$color" icon="$icon" btnicon
-                                circle /&gt;</code>
-                        </x-slot>
-                        <x-slot name="column2">
-                            <x-button href="#" color="primary" icon="print" btnicon circle />
-                            <x-button href="#" color="secondary" icon="volume-mute" btnicon circle />
-                            <x-button href="#" color="default" icon="check" btnicon circle />
-                            <x-button href="#" color="success" icon="download" btnicon circle />
-                            <x-button href="#" color="warning" icon="exclamation-triangle" btnicon circle />
-                            <x-button href="#" color="info" icon="bug" btnicon circle />
-                            <x-button href="#" color="danger" icon="times" btnicon circle />
-                            <x-button href="#" color="dark" icon="eject" btnicon circle />
-                        </x-slot>
-                    </x-row-column>
-                    <hr>
-                    <h5 class="text-info">Button Size</h5>
-                    <x-row-column :column="2">
-                        <x-slot name="column1">
-                            size lg (large)<code>&lt;x-button
-                                size="lg" :label="__('Large')" /&gt;</code>
-                            <x-button size="lg" :label="__('Large')" />
-                        </x-slot>
-                        <x-slot name="column2">
-                            size (default) <code>&lt;x-button :label="__('Default')" /&gt;</code>
-                            <x-button :label="__('Default')" />
-                        </x-slot>
-                    </x-row-column>
-                    <hr>
-                    <x-row-column :column="2">
-                        <x-slot name="column1">
-                            size sm (small)<code>&lt;x-button
-                                size="sm" :label="__('Small')" /&gt;</code>
-                            <x-button size="sm" :label="__('Small')" />
-                        </x-slot>
-                        <x-slot name="column2">
-                            size xs (smallest) <code>&lt;x-button
-                                size="xs" :label="__('Smallest')" /&gt;</code>
-                            <x-button size="xs" :label="__('Smallest')" />
-                        </x-slot>
-                    </x-row-column>
-                    <hr>
-                    <h5 class="text-info">Button Block</h5>
-                    <x-row-column :column="2">
-                        <x-slot name="column1">
-                            size lg (large) + pills <code>&lt;x-button
-                                size="lg" block pills&gt;Large&lt;/x-button&gt;</code>
-                            <x-button size="lg" block pills :label="__('Large')" />
-                        </x-slot>
-                        <x-slot name="column2">
-                            size (default) + style <code>&lt;x-button block
-                                style&gt;Default&lt;/x-button&gt;</code>
-                            <x-button block style :label="__('Default')" />
-                        </x-slot>
-                    </x-row-column>
-                    <hr>
-                    <x-row-column :column="2">
-                        <x-slot name="column1">
-                            size sm (small)<code>&lt;x-button
-                                color="danger" size="sm" block :label="__('Small')"
+                <x-panel.show title="Component" subtitle="Button">
+                    <x-tabs-pills :tabs="[
+                        ['id' => 'tab1', 'label' => 'Default Button & Outline Button'],
+                        ['id' => 'tab2', 'label' => 'Pills Button'],
+                        ['id' => 'tab3', 'label' => 'Button with ICON'],
+                        ['id' => 'tab4', 'label' => 'Icon Button'],
+                        ['id' => 'tab5', 'label' => 'Button Size'],
+                        ['id' => 'tab6', 'label' => 'Button Block'],
+                        ['id' => 'tab7', 'label' => 'Hover dot effect'],
+                        ['id' => 'tab8', 'label' => 'Button Dropdown'],
+                    ]">
+                        <div class="tab-pane fade show active" id="tab1" role="tabpanel">
+                            {{-- button --}}
+                            <h5 class="text-info">Default Button & Outline Button</h5>
+                            with color <code>&lt;x-button color="$color" :label="__('Primary')" /&gt;</code>
+                            <hr>
+                            <x-button color="primary" :label="__('Primary')" />
+                            <x-button color="secondary" :label="__('Secondary')" />
+                            <x-button color="default" :label="__('Default')" />
+                            <x-button color="success" :label="__('Success')" />
+                            <x-button color="warning" :label="__('Warning')" />
+                            <x-button color="info" :label="__('Info')" />
+                            <x-button color="danger" :label="__('Danger')" />
+                            <x-button color="dark" :label="__('Dark')" />
+                            <x-button color="light" :label="__('Light')" />
+                            <hr>
+                            with style outline <code>&lt;x-button style
+                                color="$color" :label="__('Primary')" /&gt;</code>
+                            <hr>
+                            <x-button style color="primary" :label="__('Primary')" />
+                            <x-button style color="secondary" :label="__('Secondary')" />
+                            <x-button style color="default" :label="__('Default')" />
+                            <x-button style color="success" :label="__('Success')" />
+                            <x-button style color="warning" :label="__('Warning')" />
+                            <x-button style color="info" :label="__('Info')" />
+                            <x-button style color="danger" :label="__('Danger')" />
+                            <x-button style color="dark" :label="__('Dark')" />
+                            <x-button style color="light" :label="__('Light')" />
+                            <br>
+                            <div class="panel-tag mt-2 mb-2">for outline buttons also applies to btn-icon,
+                                size, rounded-circle, btn-pills</div>
+                        </div>
+                        <div class="tab-pane fade" id="tab2" role="tabpanel">
+                            <h5 class="text-info">Pills Button</h5>
+                            with pills <code>&lt;x-button color="$color" pills :label="__('Primary')"
                                 /&gt;</code>
-                            <x-button color="danger" size="sm" block :label="__('Small')" />
-                        </x-slot>
-                        <x-slot name="column2">
-                            size xs (smallest) + href="#" <code>&lt;x-button
-                                href="#" size="xs"
-                                block :label="__('Smallest')" /&gt;</code>
-                            <x-button href="#" size="xs" block :label="__('Smallest')" />
-                        </x-slot>
-                    </x-row-column>
-                    <hr>
-                    <h5 class="text-info">Hover dot effect</h5>
-                    <x-row-column :column="2">
-                        <x-slot name="column1">
-                            <code>&lt;x-button
-                                href="javascript:void(0);" color="$color" size="$size"
-                                icon="$icon" btnicon circle
-                                effect /&gt;</code>
                             <hr>
-                            <x-button href="javascript:void(0);" color="primary" size="lg" icon="users" btnicon
-                                circle effect />
-                            <x-button href="javascript:void(0);" color="success" size="lg" icon="save" btnicon
-                                circle effect />
-                            <x-button href="javascript:void(0);" color="secondary" size="lg" icon="home" btnicon
-                                circle effect />
-                            <x-button href="javascript:void(0);" color="danger" size="lg" icon="trash" btnicon
-                                circle effect />
-                        </x-slot>
-                        <x-slot name="column2">
-                        </x-slot>
-                    </x-row-column>
-                    <hr>
-                    <h5 class="text-info">Button Dropdown</h5>
-                    <hr>
-                    <x-row-column :column="4">
-                        <x-slot name="column1">
-                            <h5> Dropdown Default</h5>
-                            <code>
-                                &lt;div class="btn-group"&gt;
-                                &lt;x-button color="primary" icon="print" :label="__('Print')" dropdowntoggle
-                                toggle="dropdown" haspopup="true" expanded="false"
-                                :items="[
-                                    ['label' => 'Action', 'href' => 'javascript:void(0);'],
-                                    ['label' => 'Another action', 'href' => 'javascript:void(0);'],
-                                    ['label' => 'Something else here', 'href' => 'javascript:void(0);'],
-                                    'divider',
-                                    ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
-                                ]"
-                                /&gt;
-                                &lt;/div&gt;
-                            </code>
+                            <x-button color="primary" pills :label="__('Primary')" />
+                            <x-button color="secondary" pills :label="__('Secondari')" />
+                            <x-button color="default" pills :label="__('Default')" />
+                            <x-button color="success" pills :label="__('Success')" />
+                            <x-button color="warning" pills :label="__('Warning')" />
+                            <x-button color="info" pills :label="__('Info')" />
+                            <x-button color="danger" pills :label="__('Danger')" />
+                            <x-button color="dark" pills :label="__('Dark')" />
+                            <x-button color="light" pills :label="__('Light')" />
                             <hr>
+                        </div>
+                        <div class="tab-pane fade" id="tab3" role="tabpanel">
+                            <h5 class="text-info">Button with ICON</h5>
+                            with icon <code>&lt;x-button color="$color"
+                                icon="$icon" :label="__('Primary')" /&gt;</code>
+                            <hr>
+                            <x-button color="primary" icon="print" :label="__('Print')" />
+                            <x-button color="secondary" icon="volume-mute" :label="__('Mute')" />
+                            <x-button color="default" icon="check" :label="__('Submit')" />
+                            <x-button color="success" icon="download" :label="__('Download')" />
+                            <x-button color="warning" icon="exclamation-triangle" :label="__('Scan Device')" />
+                            <x-button color="info" icon="bug" :label="__('Report Bug')" />
+                            <x-button color="danger" icon="times" :label="__('Delete')" />
+                            <x-button color="dark" icon="eject" :label="__('Eject')" />
+                            <hr>
+                        </div>
+                        <div class="tab-pane fade" id="tab4" role="tabpanel">
+                            <h5 class="text-info">Icon Button</h5>
+                            <x-row-column :column="2">
+                                <x-slot name="column1">
+                                    with btn-icon <code>&lt;x-button color="$color" icon="$icon"
+                                        btnicon /&gt;</code>
+                                </x-slot>
+                                <x-slot name="column2">
+                                    <x-button color="primary" icon="print" btnicon />
+                                    <x-button color="secondary" icon="volume-mute" btnicon />
+                                    <x-button color="default" icon="check" btnicon />
+                                    <x-button color="success" icon="download" btnicon />
+                                    <x-button color="warning" icon="exclamation-triangle" btnicon />
+                                    <x-button color="info" icon="bug" btnicon />
+                                    <x-button color="danger" icon="times" btnicon />
+                                    <x-button color="dark" icon="eject" btnicon />
+                                </x-slot>
+                            </x-row-column>
+                            <hr>
+                            <x-row-column :column="2">
+                                <x-slot name="column1">
+                                    with btn-icon and rounded-circle <br><code>&lt;x-button href="#"
+                                        color="$color" icon="$icon" btnicon
+                                        circle /&gt;</code>
+                                </x-slot>
+                                <x-slot name="column2">
+                                    <x-button href="#" color="primary" icon="print" btnicon circle />
+                                    <x-button href="#" color="secondary" icon="volume-mute" btnicon circle />
+                                    <x-button href="#" color="default" icon="check" btnicon circle />
+                                    <x-button href="#" color="success" icon="download" btnicon circle />
+                                    <x-button href="#" color="warning" icon="exclamation-triangle" btnicon
+                                        circle />
+                                    <x-button href="#" color="info" icon="bug" btnicon circle />
+                                    <x-button href="#" color="danger" icon="times" btnicon circle />
+                                    <x-button href="#" color="dark" icon="eject" btnicon circle />
+                                </x-slot>
+                            </x-row-column>
+                            <hr>
+                        </div>
+                        <div class="tab-pane fade" id="tab5" role="tabpanel">
+                            <h5 class="text-info">Button Size</h5>
+                            <x-row-column :column="2">
+                                <x-slot name="column1">
+                                    size lg (large)<code>&lt;x-button
+                                        size="lg" :label="__('Large')" /&gt;</code>
+                                    <x-button size="lg" :label="__('Large')" />
+                                </x-slot>
+                                <x-slot name="column2">
+                                    size (default) <code>&lt;x-button :label="__('Default')" /&gt;</code>
+                                    <x-button :label="__('Default')" />
+                                </x-slot>
+                            </x-row-column>
+                            <hr>
+                            <x-row-column :column="2">
+                                <x-slot name="column1">
+                                    size sm (small)<code>&lt;x-button
+                                        size="sm" :label="__('Small')" /&gt;</code>
+                                    <x-button size="sm" :label="__('Small')" />
+                                </x-slot>
+                                <x-slot name="column2">
+                                    size xs (smallest) <code>&lt;x-button
+                                        size="xs" :label="__('Smallest')" /&gt;</code>
+                                    <x-button size="xs" :label="__('Smallest')" />
+                                </x-slot>
+                            </x-row-column>
+                            <hr>
+                        </div>
+                        <div class="tab-pane fade" id="tab6" role="tabpanel">
+                            <h5 class="text-info">Button Block</h5>
+                            <x-row-column :column="2">
+                                <x-slot name="column1">
+                                    size lg (large) + pills <code>&lt;x-button
+                                        size="lg" block pills&gt;Large&lt;/x-button&gt;</code>
+                                    <x-button size="lg" block pills :label="__('Large')" />
+                                </x-slot>
+                                <x-slot name="column2">
+                                    size (default) + style <code>&lt;x-button block
+                                        style&gt;Default&lt;/x-button&gt;</code>
+                                    <x-button block style :label="__('Default')" />
+                                </x-slot>
+                            </x-row-column>
+                            <hr>
+                            <x-row-column :column="2">
+                                <x-slot name="column1">
+                                    size sm (small)<code>&lt;x-button
+                                        color="danger" size="sm" block :label="__('Small')"
+                                        /&gt;</code>
+                                    <x-button color="danger" size="sm" block :label="__('Small')" />
+                                </x-slot>
+                                <x-slot name="column2">
+                                    size xs (smallest) + href="#" <code>&lt;x-button
+                                        href="#" size="xs"
+                                        block :label="__('Smallest')" /&gt;</code>
+                                    <x-button href="#" size="xs" block :label="__('Smallest')" />
+                                </x-slot>
+                            </x-row-column>
+                            <hr>
+                        </div>
+                        <div class="tab-pane fade" id="tab7" role="tabpanel">
+                            <h5 class="text-info">Hover dot effect</h5>
+                            <x-row-column :column="2">
+                                <x-slot name="column1">
+                                    <code>&lt;x-button
+                                        href="javascript:void(0);" color="$color" size="$size"
+                                        icon="$icon" btnicon circle
+                                        effect /&gt;</code>
+                                    <hr>
+                                    <x-button href="javascript:void(0);" color="primary" size="lg" icon="users"
+                                        btnicon circle effect />
+                                    <x-button href="javascript:void(0);" color="success" size="lg" icon="save"
+                                        btnicon circle effect />
+                                    <x-button href="javascript:void(0);" color="secondary" size="lg" icon="home"
+                                        btnicon circle effect />
+                                    <x-button href="javascript:void(0);" color="danger" size="lg" icon="trash"
+                                        btnicon circle effect />
+                                </x-slot>
+                                <x-slot name="column2">
+                                </x-slot>
+                            </x-row-column>
+                        </div>
+                        <div class="tab-pane fade" id="tab8" role="tabpanel">
+                            <h5 class="text-info">Button Dropdown</h5>
+                            <hr>
+                            <x-row-column :column="4">
+                                <x-slot name="column1">
+                                    <h5> Dropdown Default</h5>
+                                    <code>
+                                        &lt;div class="btn-group"&gt;
+                                        &lt;x-button color="primary" icon="print" :label="__('Print')" dropdowntoggle
+                                        toggle="dropdown" haspopup="true" expanded="false"
+                                        :items="[
+                                            ['label' => 'Action', 'href' => 'javascript:void(0);'],
+                                            ['label' => 'Another action', 'href' => 'javascript:void(0);'],
+                                            ['label' => 'Something else here', 'href' => 'javascript:void(0);'],
+                                            'divider',
+                                            ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
+                                        ]"
+                                        /&gt;
+                                        &lt;/div&gt;
+                                    </code>
+                                    <hr>
+                                    <div class="btn-group">
+                                        <x-button color="primary" icon="print" :label="__('Print')" dropdowntoggle
+                                            toggle="dropdown" haspopup="true" expanded="false" :items="[
+                                                ['label' => 'Action', 'href' => 'javascript:void(0);'],
+                                                ['label' => 'Another action', 'href' => 'javascript:void(0);'],
+                                                ['label' => 'Something else here', 'href' => 'javascript:void(0);'],
+                                                'divider',
+                                                ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
+                                            ]" />
+                                    </div>
+                                </x-slot>
+                                <x-slot name="column2">
+                                    <h5> Dropdown Left Show</h5>
+                                    <code>
+                                        &lt;div class="btn-group dropleft"&gt; &lt;x-button color="danger"
+                                        :label="__('Pilihan')" dropdowntoggle toggle="dropdown" haspopup="true"
+                                        expanded="false"
+                                        :items="[
+                                            ['label' => 'Action', 'href' => 'javascript:void(0);'],
+                                            ['label' => 'Another action', 'href' => 'javascript:void(0);'],
+                                            ['label' => 'Something else here', 'href' => 'javascript:void(0);'],
+                                            'divider',
+                                            ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
+                                        ]"
+                                        /&gt; &lt;/div&gt;
+                                    </code>
+                                    <hr>
+                                    <div class="btn-group dropleft">
+                                        <x-button color="danger" :label="__('Pilihan')" dropdowntoggle toggle="dropdown"
+                                            haspopup="true" expanded="false" :items="[
+                                                ['label' => 'Action', 'href' => 'javascript:void(0);'],
+                                                ['label' => 'Another action', 'href' => 'javascript:void(0);'],
+                                                ['label' => 'Something else here', 'href' => 'javascript:void(0);'],
+                                                'divider',
+                                                ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
+                                            ]" />
+                                    </div>
+                                </x-slot>
+                                <x-slot name="column3">
+                                    <h5> Dropdown Right Show</h5>
+                                    <code>
+                                        &lt;div class="btn-group dropright"&gt;
+                                        &lt;x-button color="warning" :label="__('Pilihan')" dropdowntoggle
+                                        toggle="dropdown"
+                                        haspopup="true" expanded="false"
+                                        :items="[
+                                            ['label' => 'Action', 'href' => 'javascript:void(0);'],
+                                            ['label' => 'Another action', 'href' => 'javascript:void(0);'],
+                                            ['label' => 'Something else here', 'href' => 'javascript:void(0);'],
+                                            'divider',
+                                            ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
+                                        ]"
+                                        /&gt;
+                                        &lt;/div&gt;
+                                    </code>
+                                    <hr>
+                                    <div class="btn-group dropright">
+                                        <x-button color="warning" :label="__('Pilihan')" dropdowntoggle toggle="dropdown"
+                                            haspopup="true" expanded="false" :items="[
+                                                ['label' => 'Action', 'href' => 'javascript:void(0);'],
+                                                ['label' => 'Another action', 'href' => 'javascript:void(0);'],
+                                                ['label' => 'Something else here', 'href' => 'javascript:void(0);'],
+                                                'divider',
+                                                ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
+                                            ]" />
+                                    </div>
+                                </x-slot>
+                                <x-slot name="column4">
+                                    <h5> Dropdown Static Show</h5>
+                                    <code>
+                                        &lt;div class="btn-group"&gt;
+                                        &lt;x-button color="secondary" :label="__('Pilihan')" dropdowntoggle
+                                        toggle="dropdown"
+                                        haspopup="true" expanded="false" display="static"
+                                        :items="[
+                                            ['label' => 'Action', 'href' => 'javascript:void(0);'],
+                                            ['label' => 'Another action', 'href' => 'javascript:void(0);'],
+                                            ['label' => 'Something else here', 'href' => 'javascript:void(0);'],
+                                            'divider',
+                                            ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
+                                        ]"
+                                        /&gt;
+                                        &lt;/div&gt;
+                                    </code>
+                                    <hr>
+                                    <div class="btn-group">
+                                        <x-button color="secondary" :label="__('Pilihan')" dropdowntoggle toggle="dropdown"
+                                            haspopup="true" expanded="false" display="static" :items="[
+                                                ['label' => 'Action', 'href' => 'javascript:void(0);'],
+                                                ['label' => 'Another action', 'href' => 'javascript:void(0);'],
+                                                ['label' => 'Something else here', 'href' => 'javascript:void(0);'],
+                                                'divider',
+                                                ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
+                                            ]" />
+                                    </div>
+                                </x-slot>
+                            </x-row-column>
+
+
+                            <hr>
+
+
                             <div class="btn-group">
-                                <x-button color="primary" icon="print" :label="__('Print')" dropdowntoggle
-                                    toggle="dropdown" haspopup="true" expanded="false" :items="[
-                                        ['label' => 'Action', 'href' => 'javascript:void(0);'],
-                                        ['label' => 'Another action', 'href' => 'javascript:void(0);'],
-                                        ['label' => 'Something else here', 'href' => 'javascript:void(0);'],
-                                        'divider',
-                                        ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
-                                    ]" />
-                            </div>
-                        </x-slot>
-                        <x-slot name="column2">
-                            <h5> Dropdown Left Show</h5>
-                            <code>
-                                &lt;div class="btn-group dropleft"&gt; &lt;x-button color="danger"
-                                :label="__('Pilihan')" dropdowntoggle toggle="dropdown" haspopup="true"
-                                expanded="false"
-                                :items="[
-                                    ['label' => 'Action', 'href' => 'javascript:void(0);'],
-                                    ['label' => 'Another action', 'href' => 'javascript:void(0);'],
-                                    ['label' => 'Something else here', 'href' => 'javascript:void(0);'],
-                                    'divider',
-                                    ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
-                                ]"
-                                /&gt; &lt;/div&gt;
-                            </code>
-                            <hr>
-                            <div class="btn-group dropleft">
-                                <x-button color="danger" :label="__('Pilihan')" dropdowntoggle toggle="dropdown"
-                                    haspopup="true" expanded="false" :items="[
-                                        ['label' => 'Action', 'href' => 'javascript:void(0);'],
-                                        ['label' => 'Another action', 'href' => 'javascript:void(0);'],
-                                        ['label' => 'Something else here', 'href' => 'javascript:void(0);'],
-                                        'divider',
-                                        ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
-                                    ]" />
-                            </div>
-                        </x-slot>
-                        <x-slot name="column3">
-                            <h5> Dropdown Right Show</h5>
-                            <code>
-                                &lt;div class="btn-group dropright"&gt;
-                                &lt;x-button color="warning" :label="__('Pilihan')" dropdowntoggle toggle="dropdown"
-                                haspopup="true" expanded="false"
-                                :items="[
-                                    ['label' => 'Action', 'href' => 'javascript:void(0);'],
-                                    ['label' => 'Another action', 'href' => 'javascript:void(0);'],
-                                    ['label' => 'Something else here', 'href' => 'javascript:void(0);'],
-                                    'divider',
-                                    ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
-                                ]"
-                                /&gt;
-                                &lt;/div&gt;
-                            </code>
-                            <hr>
-                            <div class="btn-group dropright">
-                                <x-button color="warning" :label="__('Pilihan')" dropdowntoggle toggle="dropdown"
-                                    haspopup="true" expanded="false" :items="[
-                                        ['label' => 'Action', 'href' => 'javascript:void(0);'],
-                                        ['label' => 'Another action', 'href' => 'javascript:void(0);'],
-                                        ['label' => 'Something else here', 'href' => 'javascript:void(0);'],
-                                        'divider',
-                                        ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
-                                    ]" />
-                            </div>
-                        </x-slot>
-                        <x-slot name="column4">
-                            <h5> Dropdown Static Show</h5>
-                            <code>
-                                &lt;div class="btn-group"&gt;
-                                &lt;x-button color="secondary" :label="__('Pilihan')" dropdowntoggle
-                                toggle="dropdown"
-                                haspopup="true" expanded="false" display="static"
-                                :items="[
-                                    ['label' => 'Action', 'href' => 'javascript:void(0);'],
-                                    ['label' => 'Another action', 'href' => 'javascript:void(0);'],
-                                    ['label' => 'Something else here', 'href' => 'javascript:void(0);'],
-                                    'divider',
-                                    ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
-                                ]"
-                                /&gt;
-                                &lt;/div&gt;
-                            </code>
-                            <hr>
-                            <div class="btn-group">
-                                <x-button color="secondary" :label="__('Pilihan')" dropdowntoggle toggle="dropdown"
+                                <x-button color="secondary" icon="plus" btnicon circle toggle="dropdown"
                                     haspopup="true" expanded="false" display="static" :items="[
                                         ['label' => 'Action', 'href' => 'javascript:void(0);'],
                                         ['label' => 'Another action', 'href' => 'javascript:void(0);'],
@@ -494,33 +555,18 @@
                                         ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
                                     ]" />
                             </div>
-                        </x-slot>
-                    </x-row-column>
-
-
-                    <hr>
-
-
-                    <div class="btn-group">
-                        <x-button color="secondary" icon="plus" btnicon circle toggle="dropdown" haspopup="true"
-                            expanded="false" display="static" :items="[
-                                ['label' => 'Action', 'href' => 'javascript:void(0);'],
-                                ['label' => 'Another action', 'href' => 'javascript:void(0);'],
-                                ['label' => 'Something else here', 'href' => 'javascript:void(0);'],
-                                'divider',
-                                ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
-                            ]" />
-                    </div>
-                    <div class="btn-group dropright">
-                        <x-button color="info" icon="plus" btnicon circle toggle="dropdown" haspopup="true"
-                            expanded="false" display="static" :items="[
-                                ['label' => 'Action', 'href' => 'javascript:void(0);'],
-                                ['label' => 'Another action', 'href' => 'javascript:void(0);'],
-                                ['label' => 'Something else here', 'href' => 'javascript:void(0);'],
-                                'divider',
-                                ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
-                            ]" />
-                    </div>
+                            <div class="btn-group dropright">
+                                <x-button color="info" icon="plus" btnicon circle toggle="dropdown" haspopup="true"
+                                    expanded="false" display="static" :items="[
+                                        ['label' => 'Action', 'href' => 'javascript:void(0);'],
+                                        ['label' => 'Another action', 'href' => 'javascript:void(0);'],
+                                        ['label' => 'Something else here', 'href' => 'javascript:void(0);'],
+                                        'divider',
+                                        ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
+                                    ]" />
+                            </div>
+                        </div>
+                    </x-tabs-pills>
                 </x-panel.show>
             </x-slot>
         </x-row-column>
