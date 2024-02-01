@@ -47,7 +47,22 @@
                 </div>
             </div>
         </div>
-
+        <x-panel.show title="Contoh" subtitle="panel">
+            <x-slot name="paneltoolbar">
+                <x-panel.tool-bar>
+                    isi panel tool-bar
+                </x-panel.tool-bar>
+            </x-slot>
+            <x-slot name="tagpanel">
+                isi tagpanel
+            </x-slot>
+            <p>
+                ini content panel
+            </p>
+            <x-slot name="panelcontentfoot">
+                isi panelcontent foot
+            </x-slot>
+        </x-panel.show>
         <x-row-column :column="2">
             <x-slot name="column1">
                 <x-panel.show title="Default" subtitle="Example">
@@ -231,14 +246,16 @@
             <x-slot name='column1'>
                 <x-panel.show title="Component" subtitle="Button">
                     <x-tabs-pills :tabs="[
-                        ['id' => 'tab1', 'label' => 'Default Button & Outline Button'],
-                        ['id' => 'tab2', 'label' => 'Pills Button'],
-                        ['id' => 'tab3', 'label' => 'Button with ICON'],
-                        ['id' => 'tab4', 'label' => 'Icon Button'],
-                        ['id' => 'tab5', 'label' => 'Button Size'],
-                        ['id' => 'tab6', 'label' => 'Button Block'],
+                        ['id' => 'tab1', 'label' => 'Default & Outline'],
+                        ['id' => 'tab2', 'label' => 'Pills'],
+                        ['id' => 'tab3', 'label' => 'with ICON'],
+                        ['id' => 'tab4', 'label' => 'Icon'],
+                        ['id' => 'tab5', 'label' => 'Size'],
+                        ['id' => 'tab6', 'label' => 'Block'],
                         ['id' => 'tab7', 'label' => 'Hover dot effect'],
-                        ['id' => 'tab8', 'label' => 'Button Dropdown'],
+                        ['id' => 'tab8', 'label' => 'Dropdown'],
+                        ['id' => 'tab9', 'label' => 'Bootbox'],
+                        ['id' => 'tab10', 'label' => 'Toastr'],
                     ]">
                         <div class="tab-pane fade show active" id="tab1" role="tabpanel">
                             {{-- button --}}
@@ -456,19 +473,21 @@
                                 </x-slot>
                                 <x-slot name="column2">
                                     <h5> Dropdown Left Show</h5>
-                                    <code>
-                                        &lt;div class="btn-group dropleft"&gt; &lt;x-button color="danger"
-                                        :label="__('Pilihan')" dropdowntoggle toggle="dropdown" haspopup="true"
-                                        expanded="false"
-                                        :items="[
-                                            ['label' => 'Action', 'href' => 'javascript:void(0);'],
-                                            ['label' => 'Another action', 'href' => 'javascript:void(0);'],
-                                            ['label' => 'Something else here', 'href' => 'javascript:void(0);'],
-                                            'divider',
-                                            ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
-                                        ]"
-                                        /&gt; &lt;/div&gt;
-                                    </code>
+                                    <div class="fs-lg fw-300 p-1 border-faded rounded mb-g">
+                                        <code>
+                                            &lt;div class="btn-group dropleft"&gt; &lt;x-button color="danger"
+                                            :label="__('Pilihan')" dropdowntoggle toggle="dropdown" haspopup="true"
+                                            expanded="false"
+                                            :items="[
+                                                ['label' => 'Action', 'href' => 'javascript:void(0);'],
+                                                ['label' => 'Another action', 'href' => 'javascript:void(0);'],
+                                                ['label' => 'Something else here', 'href' => 'javascript:void(0);'],
+                                                'divider',
+                                                ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
+                                            ]"
+                                            /&gt; &lt;/div&gt;
+                                        </code>
+                                    </div>
                                     <hr>
                                     <div class="btn-group dropleft">
                                         <x-button color="danger" :label="__('Pilihan')" dropdowntoggle toggle="dropdown"
@@ -566,7 +585,66 @@
                                     ]" />
                             </div>
                         </div>
+                        <div class="tab-pane fade" id="tab9" role="tabpanel">
+                            <x-row-column :column="2">
+                                <x-slot name='column1'>
+                                    <h5 class="text-info">Konfirmasi Ya atau Tidak</h5>
+                                    <code>
+                                        &lt;x-button href="#" icon="sign-out-alt" id="ya-atau-tidak"
+                                        data-title="Konfirmasi"
+                                        data-message="Apakah Anda yakin ingin logout?" data-redirect-url="/"
+                                        title="Logout"
+                                        :label="__('Logout')" /&gt;
+                                    </code>
+                                    <hr>
+                                    HTML :
+                                    <pre>
+&lt;a href="#" id="ya-atau-tidak" data-title="Konfirmasi"
+data-message="Apakah Anda yakin ingin logout?" data-redirect-url="/" title="Logout"
+class="btn btn-info waves-effect waves-themed"&gt;
+&lt;i class="fal  fa-sign-out-alt mr-2"&gt;&lt;/i&gt;
+Logout
+&lt;/a&gt;
+                                    </pre>
+                                    <x-button href="#" icon="sign-out-alt" id="ya-atau-tidak"
+                                        data-title="Konfirmasi" data-message="Apakah Anda yakin ingin logout?"
+                                        data-redirect-url="/" title="Logout" :label="__('Logout')" />
+                                </x-slot>
+                                <x-slot name='column2'>
+                                    <h5 class="text-info">Pemberitahuan</h5>
+                                    <code>
+                                        &lt;x-button href="#" icon="save" color="info" id="eksekusi"
+                                        data-title="Informasi !!" data-message="Data sukses di simpan"
+                                        data-redirect-url="/dashboard" title="Simpan" :label="__('Simpan')" /&gt;
+                                    </code>
+                                    <hr>
+                                    HTML :
+                                    <pre>
+&lt;a href="#" id="eksekusi" data-title="Informasi !!"
+data-message="Data sukses di simpan" data-redirect-url="/dashboard" title="Simpan"
+class="btn btn-info waves-effect waves-themed"&gt;
+&lt;i class="fal  fa-save mr-2"&gt;&lt;/i&gt;
+Simpan
+&lt;/a&gt;
+                                    </pre>
+                                    <x-button href="#" icon="save" color="info" id="eksekusi"
+                                        data-title="Informasi !!" data-message="Data sukses di simpan"
+                                        data-redirect-url="/dashboard" title="Simpan" :label="__('Simpan')" />
+                                </x-slot>
+                            </x-row-column>
+
+
+                        </div>
+                        <div class="tab-pane fade" id="tab10" role="tabpanel">
+                            <h5 class="text-info">Button Dropdown</h5>
+                        </div>
                     </x-tabs-pills>
+                    @php
+                        $markdownContent = file_get_contents(resource_path('/data/button.md'));
+                    @endphp
+                    <pre>
+                        {!! htmlspecialchars($markdownContent) !!}
+                    </pre>
                 </x-panel.show>
             </x-slot>
         </x-row-column>

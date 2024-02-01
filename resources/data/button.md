@@ -1,43 +1,56 @@
+.
+
+# COMPONENT BUTTON DISPLAY
+
 @props([
-    'icon' => null,
-    'label' => null,
-    'color' => 'primary',
-    'size' => null,
-    'type' => 'button',
-    'route' => null,
-    'url' => null,
-    'href' => null,
-    'dismiss' => null,
-    'toggle' => null,
-    'click' => null,
-    'pills' => false,
-    'btnicon' => false,
-    'circle' => false,
-    'confirm' => false,
-    'style' => false,
-    'block' => false,
-    'effect' => false,
-    'dropdowntoggle' => false,
-    'toggle' => null,
-    'haspopup' => null,
-    'expanded' => null,
-    'display' => null,
-    'items' => [],
-    'id' => null,
-    'datatitle' => null,
-    'message' => null,
-    'redirecturl' => null,
-    'title' => null,
+'icon' => null,
+'label' => null,
+'color' => 'primary',
+'size' => null,
+'type' => 'button',
+'route' => null,
+'url' => null,
+'href' => null,
+'dismiss' => null,
+'toggle' => null,
+'click' => null,
+'pills' => false,
+'btnicon' => false,
+'circle' => false,
+'confirm' => false,
+'style' => false,
+'block' => false,
+'effect' => false,
+'dropdowntoggle' => false,
+'toggle' => null,
+'haspopup' => null,
+'expanded' => null,
+'display' => null,
+'items' => [],
+'id' => null,
+'datatitle' => null,
+'message' => null,
+'redirecturl' => null,
+'title' => null,
 ])
 
 @php
-    if ($route) {
+if ($route) {
         $href = route($route);
-    } elseif ($url) {
+} elseif ($url) {
         $href = url($url);
-    }
+}
 
-    $attributes = $attributes->class([$style ? 'btn btn-outline-' . $color : 'btn btn-' . $color, 'btn-' . $size => $size, 'btn-pills' => $pills, 'btn-icon' => $btnicon, 'rounded-circle' => $circle, 'btn-block' => $block, 'hover-effect-dot' => $effect, 'dropdown-toggle' => $dropdowntoggle])->merge([
+    $attributes = $attributes->class(
+        [$style ? 'btn btn-outline-' . $color : 'btn btn-' . $color,
+        'btn-' . $size => $size,
+        'btn-pills' => $pills,
+        'btn-icon' => $btnicon,
+        'rounded-circle' => $circle,
+        'btn-block' => $block,
+        'hover-effect-dot' => $effect,
+        'dropdown-toggle' => $dropdowntoggle]
+    )->merge([
         'type' => !$href ? $type : null,
         'href' => $href,
         'data-dismiss' => $dismiss,
@@ -53,10 +66,11 @@
         'wire:click' => $click,
         'onclick' => $confirm ? 'confirm(\'' . __('Are you sure?') . '\') || event.stopImmediatePropagation()' : null,
     ]);
+
 @endphp
 
 <{{ $href ? 'a' : 'button' }} {{ $attributes }}>
-    <x-icon fal :name="$icon" class="mr-2" />
+<x-icon fal :name="$icon" class="mr-2" />
 
     {{ $label ?? $slot }}
     </{{ $href ? 'a' : 'button' }}>
