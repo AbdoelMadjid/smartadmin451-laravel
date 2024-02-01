@@ -16,25 +16,25 @@ class AppFiturSeeder extends Seeder
         $Data = [
             [
                 'nama_fitur' => '_app_settings',
-                'aktif' => 'N',
+                'aktif' => 'Y',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'nama_fitur' => '_app_shortcuts',
-                'aktif' => 'N',
+                'aktif' => 'Y',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'nama_fitur' => '_app_message',
-                'aktif' => 'N',
+                'aktif' => 'Y',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'nama_fitur' => '_app_notification',
-                'aktif' => 'N',
+                'aktif' => 'Y',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
