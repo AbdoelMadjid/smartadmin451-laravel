@@ -12,10 +12,10 @@
 git clone https://github.com/AbdoelMadjid/smartadmin451-laravel.git
 ```
 ```console
-composer install**
+composer install
 ```
 ```console
-composer dump-autoload**
+composer dump-autoload
 ```
 ```console
 cp .env.example .env
