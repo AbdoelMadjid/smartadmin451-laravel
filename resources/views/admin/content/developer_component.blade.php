@@ -746,6 +746,10 @@ Simpan
                     <h3 class="mb-g">
                         Hi Everyone,
                     </h3>
+                    <x-button href="/dashboard" color="warning" :label="__('Warning')"
+                        onclick="showToast('Warning','sukses di simpan', 'warning')" />
+                    <button class="btn btn-warning btn-sm"
+                        onclick="showToast('Warning','sukses di simpan', 'warning')">Simpan</button>
                     <p>
                         Some time ago we asked for your input, whether you were a seasoned SmartAdmin user or just peeking
                         around
@@ -814,4 +818,43 @@ Simpan
             </x-slot>
         </x-row-column>
     </main>
+@endsection
+@section('pages-script')
+    <script src="/admin/js/notifications/toastr/toastr.js"></script>
+    <script>
+        $(document).ready(function() {
+            toastr.options = {
+                "closeButton": true,
+                "debug": false,
+                "newestOnTop": true,
+                "progressBar": true,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": 300,
+                "hideDuration": 100,
+                "timeOut": 5000,
+                "extendedTimeOut": 1000,
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut",
+                "infoSound": '',
+                "successSound": '',
+                "warningSound": '',
+                "errorSound": '',
+                "pusherSound": '',
+            }
+
+            // Fungsi untuk menampilkan pemberitahuan Toastr
+            window.showToast = function(title, message, type) {
+                toastr[type](message, title);
+            }
+
+            //showToast("Sukses!", "Ini pesan sukses", "success");
+            //showToast("Informasi", "Ini pesan informasi", "info");
+            //showToast("Error", "Ini pesan error", "error");
+            //showToast("Peringatan", "Ini pesan peringatan", "warning");
+        });
+    </script>
 @endsection

@@ -73,3 +73,9 @@
             @endforeach
         </div>
     @endif
+    {{--
+    <button class="btn btn-{{ $typebutton }} btn-sm"
+        onclick="showToast('{{ $judul }}','{{ $message }}', '{{ $type }}')">{{ $slot }}</button>
+
+    <x-toastr-notif typebutton="warning" type="warning" message="Terjadi Kesalahan">Warning</x-toastr-notif>
+ --}}
