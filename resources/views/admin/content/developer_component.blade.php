@@ -30,8 +30,6 @@
                 </div>
                 <div class="d-flex flex-fill">
                     <div class="flex-fill">
-                        <div> </div>
-                        <x-div :text="__('Pro Tip!')" class="h5" />
                         <x-div div :text="__('Pro Tip!')" class="h5" />
                         <p>
                             Laravel has provided one of the interesting features in its templating blade, namely Components.
@@ -636,7 +634,44 @@ Simpan
 
                         </div>
                         <div class="tab-pane fade" id="tab10" role="tabpanel">
-                            <h5 class="text-info">Button Dropdown</h5>
+                            <x-row-column :column="4">
+                                <x-slot name='column1'>
+                                    <code>
+                                        &lt;x-button color="success" size="sm" :label="__('Success')"
+                                        onclick="showToast('Success','Data sukses di simpan', 'success')" /&gt;
+                                    </code>
+                                    <hr>
+                                    <x-button color="success" size="sm" :label="__('Success')"
+                                        onclick="showToast('Success','Data sukses di simpan', 'success')" />
+                                </x-slot>
+                                <x-slot name='column2'>
+                                    <code>
+                                        &lt;x-button color="info" size="sm" :label="__('Info')"
+                                        onclick="showToast('Info','Data telah di hapus', 'info')" /&gt;
+                                    </code>
+                                    <hr>
+                                    <x-button color="info" size="sm" :label="__('Info')"
+                                        onclick="showToast('Info','Data telah di hapus', 'info')" />
+                                </x-slot>
+                                <x-slot name='column3'>
+                                    <code>
+                                        &lt;x-button color="danger" size="sm" :label="__('Error')"
+                                        onclick="showToast('Error','Ada Masalah', 'error')" /&gt;
+                                    </code>
+                                    <hr>
+                                    <x-button color="danger" size="sm" :label="__('Error')"
+                                        onclick="showToast('Error','Ada Masalah', 'error')" />
+                                </x-slot>
+                                <x-slot name='column4'>
+                                    <code>
+                                        &lt;x-button color="warning" size="sm" :label="__('Warning')"
+                                        onclick="showToast('Warning','Mohon di perhatikan', 'warning')" /&gt;
+                                    </code>
+                                    <hr>
+                                    <x-button color="warning" size="sm" :label="__('Warning')"
+                                        onclick="showToast('Warning','Mohon di perhatikan', 'warning')" />
+                                </x-slot>
+                            </x-row-column>
                         </div>
                     </x-tabs-pills>
                     @php
@@ -746,10 +781,7 @@ Simpan
                     <h3 class="mb-g">
                         Hi Everyone,
                     </h3>
-                    <x-button href="/dashboard" color="warning" :label="__('Warning')"
-                        onclick="showToast('Warning','sukses di simpan', 'warning')" />
-                    <button class="btn btn-warning btn-sm"
-                        onclick="showToast('Warning','sukses di simpan', 'warning')">Simpan</button>
+
                     <p>
                         Some time ago we asked for your input, whether you were a seasoned SmartAdmin user or just peeking
                         around
