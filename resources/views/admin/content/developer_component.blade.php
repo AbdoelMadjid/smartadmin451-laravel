@@ -237,6 +237,22 @@
                     <x-number-style color="info" :label="__('25')" />
                     <x-number-style color="danger" :label="__('1')" />
                 </x-panel.show>
+                <x-panel.show title="Component" subtitle="Badge">
+                    <h5 class="text-info">Component</h5>
+                    <code>x-badge</code>
+                    <hr>
+                    <h5 class="text-info">variabel</h5>
+                    <code>color = success, warning, danger, info, primary, secondary</code>
+                    <hr>
+                    <h5 class="text-info">Example</h5>
+                    <code>
+                        &lt;x-badge color="success" :label="__('News')" /&gt;
+                    </code>
+                    <hr>
+                    <x-badge color="success" :label="__('News')" />
+                    <x-badge color="info" fill :label="__('Test')" />
+
+                </x-panel.show>
             </x-slot>
         </x-row-column>
 
