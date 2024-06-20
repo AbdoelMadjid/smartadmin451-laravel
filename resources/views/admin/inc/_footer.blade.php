@@ -7,8 +7,8 @@
     <div>
         <ul class="list-table m-0">
             <li><a href="/intel_introduction" class="text-secondary fw-700">About</a></li>
-            <li class="pl-3"><a href="/docs_general" class="text-secondary fw-700">License</a></li>
-            <li class="pl-3"><a href="/info_app_docs" class="text-secondary fw-700">Documentation</a></li>
+            <li class="pl-3"><a href="/docs_licensing" class="text-secondary fw-700">License</a></li>
+            <li class="pl-3"><a href="/docs_general" class="text-secondary fw-700">Documentation</a></li>
             <li class="pl-3 fs-xl"><a href="https://wrapbootstrap.com/user/MyOrange" class="text-secondary"
                     target="_blank"><i class="fal fa-question-circle" aria-hidden="true"></i></a></li>
         </ul>

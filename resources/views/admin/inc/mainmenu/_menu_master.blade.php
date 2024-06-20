@@ -1,4 +1,10 @@
 <li class="nav-title">Master</li>
+<li class="{{ Request::is('master_profil*') ? 'active' : '' }}">
+    <a href="/master_profil" title="Profil Master" data-filter-tags="master profil">
+        <i class="fal fa-user-circle"></i>
+        <span class="nav-link-text" data-i18n="nav.master_profil">Profil Master</span>
+    </a>
+</li>
 <li class="{{ Request::is('tools*') ? 'active open' : '' }}">
     <a href="#" title="Tools" data-filter-tags="tools">
         <i class="fal fa-cogs"></i>
@@ -17,7 +23,7 @@
         </li>
         <li class="{{ Request::is('tools_ekspor_data_master*') ? 'active' : '' }}">
             <a href="/tools_ekspor_data_master" title="Ekspor Data Master" data-filter-tags="tools ekspor data master">
-                <span class="nav-link-text" data-i18n="nav.tools_ekspor_data_master">Introduction</span>
+                <span class="nav-link-text" data-i18n="nav.tools_ekspor_data_master">Ekspor Data Master</span>
             </a>
         </li>
         <li class="{{ Request::is('tools_backup_database*') ? 'active' : '' }}">
@@ -117,7 +123,7 @@
                     </a>
                 </li>
                 <li class="{{ Request::is('kurikulum_proses_kbm_remedial') ? 'active' : '' }}">
-                    <a href="/kurikulum_proses_kbm_remedial" title="Remdial"
+                    <a href="/kurikulum_proses_kbm_remedial" title="Remedial"
                         data-filter-tags="kurikulum proses kbm remedial">
                         <span class="nav-link-text" data-i18n="nav.kurikulum_proses_kbm_remedial">Remedial</span>
                     </a>
