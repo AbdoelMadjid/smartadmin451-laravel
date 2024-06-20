@@ -70,7 +70,7 @@ if ($route) {
 @endphp
 
 <{{ $href ? 'a' : 'button' }} {{ $attributes }}>
-<x-icon fal :name="$icon" class="mr-2" />
+<x-icon fal :name="$icon" />
 
     {{ $label ?? $slot }}
     </{{ $href ? 'a' : 'button' }}>

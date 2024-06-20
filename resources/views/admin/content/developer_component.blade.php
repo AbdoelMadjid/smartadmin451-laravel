@@ -459,21 +459,14 @@
                             <x-row-column :column="4">
                                 <x-slot name="column1">
                                     <h5> Dropdown Default</h5>
-                                    <code>
-                                        &lt;div class="btn-group"&gt;
-                                        &lt;x-button color="primary" icon="print" :label="__('Print')" dropdowntoggle
-                                        toggle="dropdown" haspopup="true" expanded="false"
-                                        :items="[
-                                            ['label' => 'Action', 'href' => 'javascript:void(0);'],
-                                            ['label' => 'Another action', 'href' => 'javascript:void(0);'],
-                                            ['label' => 'Something else here', 'href' => 'javascript:void(0);'],
-                                            'divider',
-                                            ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
-                                        ]"
-                                        /&gt;
-                                        &lt;/div&gt;
-                                    </code>
-                                    <hr>
+                                    <div class="fs-lg fw-300 p-1 border-faded rounded mb-g">
+                                        @php
+                                            $DropdownDef = file_get_contents(resource_path('/data/DropdownDefault.md'));
+                                        @endphp
+                                        <pre>
+                                        {!! htmlspecialchars($DropdownDef) !!}
+                                        </pre>
+                                    </div>
                                     <div class="btn-group">
                                         <x-button color="primary" icon="print" :label="__('Print')" dropdowntoggle
                                             toggle="dropdown" haspopup="true" expanded="false" :items="[
@@ -488,21 +481,15 @@
                                 <x-slot name="column2">
                                     <h5> Dropdown Left Show</h5>
                                     <div class="fs-lg fw-300 p-1 border-faded rounded mb-g">
-                                        <code>
-                                            &lt;div class="btn-group dropleft"&gt; &lt;x-button color="danger"
-                                            :label="__('Pilihan')" dropdowntoggle toggle="dropdown" haspopup="true"
-                                            expanded="false"
-                                            :items="[
-                                                ['label' => 'Action', 'href' => 'javascript:void(0);'],
-                                                ['label' => 'Another action', 'href' => 'javascript:void(0);'],
-                                                ['label' => 'Something else here', 'href' => 'javascript:void(0);'],
-                                                'divider',
-                                                ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
-                                            ]"
-                                            /&gt; &lt;/div&gt;
-                                        </code>
+                                        @php
+                                            $DropdownLeft = file_get_contents(
+                                                resource_path('/data/DropdownLeftShow.md'),
+                                            );
+                                        @endphp
+                                        <pre>
+                                        {!! htmlspecialchars($DropdownLeft) !!}
+                                        </pre>
                                     </div>
-                                    <hr>
                                     <div class="btn-group dropleft">
                                         <x-button color="danger" :label="__('Pilihan')" dropdowntoggle toggle="dropdown"
                                             haspopup="true" expanded="false" :items="[
@@ -516,22 +503,16 @@
                                 </x-slot>
                                 <x-slot name="column3">
                                     <h5> Dropdown Right Show</h5>
-                                    <code>
-                                        &lt;div class="btn-group dropright"&gt;
-                                        &lt;x-button color="warning" :label="__('Pilihan')" dropdowntoggle
-                                        toggle="dropdown"
-                                        haspopup="true" expanded="false"
-                                        :items="[
-                                            ['label' => 'Action', 'href' => 'javascript:void(0);'],
-                                            ['label' => 'Another action', 'href' => 'javascript:void(0);'],
-                                            ['label' => 'Something else here', 'href' => 'javascript:void(0);'],
-                                            'divider',
-                                            ['label' => 'Separated link', 'href' => 'javascript:void(0);'],
-                                        ]"
-                                        /&gt;
-                                        &lt;/div&gt;
-                                    </code>
-                                    <hr>
+                                    <div class="fs-lg fw-300 p-1 border-faded rounded mb-g">
+                                        @php
+                                            $DropdownRight = file_get_contents(
+                                                resource_path('/data/DropdownRightShow.md'),
+                                            );
+                                        @endphp
+                                        <pre>
+                                        {!! htmlspecialchars($DropdownRight) !!}
+                                        </pre>
+                                    </div>
                                     <div class="btn-group dropright">
                                         <x-button color="warning" :label="__('Pilihan')" dropdowntoggle toggle="dropdown"
                                             haspopup="true" expanded="false" :items="[

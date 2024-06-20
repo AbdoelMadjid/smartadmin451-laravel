@@ -37,26 +37,39 @@
         $href = url($url);
     }
 
-    $attributes = $attributes->class([$style ? 'btn btn-outline-' . $color : 'btn btn-' . $color, 'btn-' . $size => $size, 'btn-pills' => $pills, 'btn-icon' => $btnicon, 'rounded-circle' => $circle, 'btn-block' => $block, 'hover-effect-dot' => $effect, 'dropdown-toggle' => $dropdowntoggle])->merge([
-        'type' => !$href ? $type : null,
-        'href' => $href,
-        'data-dismiss' => $dismiss,
-        'data-toggle' => $toggle,
-        'aria-haspopup' => $haspopup,
-        'aria-expanded' => $expanded,
-        'data-display' => $display,
-        'id' => $id,
-        'data-title' => $datatitle,
-        'data-message' => $message,
-        'data-redirect-url' => $redirecturl,
-        'title' => $title,
-        'wire:click' => $click,
-        'onclick' => $confirm ? 'confirm(\'' . __('Are you sure?') . '\') || event.stopImmediatePropagation()' : null,
-    ]);
+    $attributes = $attributes
+        ->class([
+            $style ? 'btn btn-outline-' . $color : 'btn btn-' . $color,
+            'btn-' . $size => $size,
+            'btn-pills' => $pills,
+            'btn-icon' => $btnicon,
+            'rounded-circle' => $circle,
+            'btn-block' => $block,
+            'hover-effect-dot' => $effect,
+            'dropdown-toggle' => $dropdowntoggle,
+        ])
+        ->merge([
+            'type' => !$href ? $type : null,
+            'href' => $href,
+            'data-dismiss' => $dismiss,
+            'data-toggle' => $toggle,
+            'aria-haspopup' => $haspopup,
+            'aria-expanded' => $expanded,
+            'data-display' => $display,
+            'id' => $id,
+            'data-title' => $datatitle,
+            'data-message' => $message,
+            'data-redirect-url' => $redirecturl,
+            'title' => $title,
+            'wire:click' => $click,
+            'onclick' => $confirm
+                ? 'confirm(\'' . __('Are you sure?') . '\') || event.stopImmediatePropagation()'
+                : null,
+        ]);
 @endphp
 
 <{{ $href ? 'a' : 'button' }} {{ $attributes }}>
-    <x-icon fal :name="$icon" class="mr-2" />
+    <x-icon fal :name="$icon" />
 
     {{ $label ?? $slot }}
     </{{ $href ? 'a' : 'button' }}>
