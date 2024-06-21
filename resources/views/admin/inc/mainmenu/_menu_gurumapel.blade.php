@@ -11,10 +11,11 @@
         <span class="nav-link-text" data-i18n="nav.gurumapel_data_kbm">Data KBM</span>
     </a>
 </li>
-<li class="{{ Request::is('gurumapel_capaian_kompetensi*') ? 'active' : '' }}">
-    <a href="/gurumapel_capaian_kompetensi" title="Capaian Kompetensi" data-filter-tags="gurumapel capaian kompetensi">
+<li class="{{ Request::is('gurumapel_capaian_pembelajaran*') ? 'active' : '' }}">
+    <a href="/gurumapel_capaian_pembelajaran" title="Capaian Pembelajaran"
+        data-filter-tags="gurumapel capaian pembelajaran">
         <i class="fal fa-list-ul"></i>
-        <span class="nav-link-text" data-i18n="nav.gurumapel_capaian_kompetensi">Capaian Kompetensi</span>
+        <span class="nav-link-text" data-i18n="nav.gurumapel_capaian_pembelajaran">Capaian Pembelajaran</span>
     </a>
 </li>
 <li class="{{ Request::is('gurumapel_proses_penilaian*') ? 'active' : '' }}">
