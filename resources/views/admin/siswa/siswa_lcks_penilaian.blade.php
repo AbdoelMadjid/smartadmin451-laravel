@@ -1,5 +1,5 @@
 @extends('admin.inc.main')
-@section('title', 'Profil Master')
+@section('title', 'Penilaian Siswa')
 @section('pages-css')
     <link rel="stylesheet" media="screen, print" href="/admin/css/fa-solid.css">
     <link rel="stylesheet" media="screen, print" href="/admin/css/theme-demo.css">
@@ -7,13 +7,15 @@
 @endsection
 @section('pages-content')
     <main id="js-page-content" role="main" class="page-content">
-        @include('admin.inc._page_breadcrumb', ['category_1' => 'Master'])
+        @include('admin.inc._page_breadcrumb', [
+            'category_1' => 'Siswa',
+            'category_2' => 'Capaian Pembelajaran',
+        ])
         <div class="subheader">
             @component('admin.inc._page_heading', [
-                'icon' => 'user',
-                'heading1' => 'Profil',
-                'heading2' => 'Master',
-                'sup' => 'ADDON',
+                'icon' => 'calendar-alt',
+                'heading1' => 'Penilaian',
+                'heading2' => 'Siswa',
             ])
             @endcomponent
         </div>
