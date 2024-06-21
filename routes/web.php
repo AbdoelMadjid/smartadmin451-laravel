@@ -29,3 +29,4 @@ Route::get('/about', [TemplateController::class, 'about'])->name('about');
 
 require __DIR__ . '/web-template.php';
 require __DIR__ . '/mainmenu-master.php';
+require __DIR__ . '/mainmenu-walikelas.php';
