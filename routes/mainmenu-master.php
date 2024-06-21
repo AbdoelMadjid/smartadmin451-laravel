@@ -1,8 +1,6 @@
 <?php
 
-use App\Http\Controllers\ErrorController;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\temp\TemplateController;
+use App\Http\Controllers\MasterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,13 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 /* Route::get('/', function () {
     return view('welcome');
-}); */
+});
+ */
 
-Route::fallback([ErrorController::class, 'index']);
 
+/* Route::fallback([TemplateController::class, 'error_pages']); */
 
-Route::get('/', [AuthController::class, 'index'])->name('login');
-Route::get('/dashboard', [TemplateController::class, 'index'])->name('dashboard');
-
-require __DIR__ . '/web-template.php';
-require __DIR__ . '/mainmenu-master.php';
+Route::get('/master_profil', [MasterController::class, 'master_profil'])->name('master_profil');

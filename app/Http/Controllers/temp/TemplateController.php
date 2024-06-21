@@ -12,6 +12,10 @@ class TemplateController extends Controller
     {
         return view('dashboard');
     }
+    public function about()
+    {
+        return view('about');
+    }
     public function dev_component()
     {
         return view('admin.content.developer_component');
