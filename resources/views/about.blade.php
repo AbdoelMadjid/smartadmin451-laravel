@@ -10,7 +10,7 @@
         @include('admin.inc._page_breadcrumb')
         <div class="subheader">
             @component('admin.inc._page_heading', [
-                'icon' => 'home',
+                'icon' => 'info-circle',
                 'heading1' => 'About',
                 'heading2' => 'Admin',
                 'sup' => 'ADDON',

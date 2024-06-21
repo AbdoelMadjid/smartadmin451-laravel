@@ -10,7 +10,7 @@
         @include('admin.inc._page_breadcrumb', ['category_1' => 'Siswa'])
         <div class="subheader">
             @component('admin.inc._page_heading', [
-                'icon' => 'user',
+                'icon' => 'user-circle',
                 'heading1' => 'Profil',
                 'heading2' => 'Siswa',
                 'sup' => 'ADDON',
