@@ -13,7 +13,7 @@
 @endphp
 
 
-<div id="panel-{{ $id_panel ?? $randomText }}" class="panel">
+<div id="panel-{{ $id_panel ?? $randomText }}" class="panel shadow-5">
     <div class="panel-hdr">
         <x-title :l="2" :title="__($title)">
             @if ($subtitle)

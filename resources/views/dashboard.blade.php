@@ -41,7 +41,7 @@
             @endcomponent
         </div>
 
-        <div class="fs-lg fw-300 p-5 bg-white border-faded rounded mb-g">
+        <div class="fs-lg fw-300 p-5 bg-white border-faded rounded mb-g shadow-5">
             <div class="input-group input-group-lg mb-g">
                 <input type="text" class="form-control shadow-inset-2" placeholder="Search Threads">
                 <div class="input-group-append">
