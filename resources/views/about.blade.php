@@ -99,14 +99,28 @@
             </x-slot>
             <x-slot name="content2">
                 <div class="card mb-g shadow-5">
-                    <div class="row row-grid no-gutters">
-                        <div class="col-12">
-                            <div class="p-3">
-                                <h2 class="mb-0 fs-xl fw-700">
-                                    <i class="fal fa-dice-d6"></i> Current Project
-                                </h2>
-                            </div>
+                    <div class="card-header pr-3 d-flex align-items-center flex-wrap">
+                        <!-- we wrap header title inside a span tag with utility padding -->
+                        <div class="card-title mb-0 fs-xl fw-700"> <i class="fal fa-users color-danger-700"></i> Dropdowns
                         </div>
+                        <x-button color="primary" size="xs" pills :label="__('Back')" class="ml-auto" />
+                        {{-- <button class="btn btn-icon btn-xs ml-auto fs-xl" data-toggle="dropdown">
+                            <i class="fal fa-ellipsis-v"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-animated dropdown-menu-right">
+                            <button class="dropdown-item">
+                                Option 1
+                            </button>
+                            <button class="dropdown-item">
+                                Option 2
+                            </button>
+                            <div class="dropdown-divider m-0"></div>
+                            <button class="dropdown-item">
+                                Refresh
+                            </button>
+                        </div> --}}
+                    </div>
+                    <div class="row row-grid no-gutters">
                         <div class="col-12">
                             <div class="p-3">
                                 <h5 class="text-danger">
@@ -272,6 +286,137 @@
                                 Adding qualifications will help gain more clients
                             </div>
                         </a>
+                    </div>
+                    <div class="row row-grid no-gutters">
+                        <div class="col-12">
+                            <div class="p-3">
+                                <h5 class="text-danger">
+                                    Xray improvement algorythm
+                                    <small class="mt-0 mb-3 text-muted">
+                                        Migration of new API to local servers
+                                    </small>
+                                    <span
+                                        class="badge badge-danger fw-n position-absolute pos-top pos-right mt-3 mr-3">Delayed</span>
+                                </h5>
+                                <div class="row fs-b fw-300">
+                                    <div class="col text-left">
+                                        Progress
+                                    </div>
+                                    <div class="col text-right">
+                                        26%
+                                    </div>
+                                </div>
+                                <div class="progress progress-xs d-flex mb-2 mt-1">
+                                    <span class="progress-bar bg-danger-500 progress-bar-striped" role="progressbar"
+                                        style="width: 26%" aria-valuenow="26" aria-valuemin="0"
+                                        aria-valuemax="100"></span>
+                                </div>
+                                <div class="fw-300 mb-3">
+                                    <div class="row">
+                                        <div class="col">
+                                            Budget
+                                        </div>
+                                        <div class="col text-right text-danger">
+                                            -$155,473.70
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="p-3">
+                                <h5>
+                                    Radioactive Isotope Research
+                                    <small class="mt-0 mb-3 text-muted">
+                                        Accelerator based methods of Technetium99m production – target preparation and
+                                        processing and beam monitoring technologies
+                                    </small>
+                                    <span
+                                        class="badge badge-primary fw-n position-absolute pos-top pos-right mt-3 mr-3">A</span>
+                                </h5>
+                                <div class="row fs-b fw-300">
+                                    <div class="col text-left">
+                                        Progress
+                                    </div>
+                                    <div class="col text-right">
+                                        90%
+                                    </div>
+                                </div>
+                                <div class="progress progress-xs d-flex mb-2 mt-1">
+                                    <span class="progress-bar bg-primary-500 progress-bar-striped" role="progressbar"
+                                        style="width: 90%" aria-valuenow="90" aria-valuemin="0"
+                                        aria-valuemax="100"></span>
+                                </div>
+                                <div class="fw-300 mb-0">
+                                    <div class="row">
+                                        <div class="col">
+                                            Budget
+                                        </div>
+                                        <div class="col text-right">
+                                            $1,325,987.30
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="p-3 text-center">
+                                <div class="text-left fw-400 ">
+                                    <div class="text-secondary mb-1">Project Owners</div>
+                                    <div class="fs-sm d-flex align-items-center">
+                                        <a href="#" class="btn-m-s">
+                                            <img src="/admin/img/demo/avatars/avatar-a.png"
+                                                class="profile-image-sm rounded-circle" alt="aa">
+                                        </a>
+                                        <a href="#" class="btn-m-s">
+                                            <img src="/admin/img/demo/avatars/avatar-b.png"
+                                                class="profile-image-sm rounded-circle" alt="aa">
+                                        </a>
+                                        <a href="#" class="btn-m-s">
+                                            <img src="/admin/img/demo/avatars/avatar-c.png"
+                                                class="profile-image-sm rounded-circle" alt="aa">
+                                        </a>
+                                        <a href="#" class="btn-m-s">
+                                            <img src="/admin/img/demo/avatars/avatar-e.png"
+                                                class="profile-image-sm rounded-circle" alt="aa">
+                                        </a>
+                                        <a href="#" class="btn-m-s">
+                                            <img src="/admin/img/demo/avatars/avatar-h.png"
+                                                class="profile-image-sm rounded-circle" alt="aa">
+                                        </a>
+                                        <a href="#" class="btn-m-s">
+                                            <img src="/admin/img/demo/avatars/avatar-k.png"
+                                                class="profile-image-sm rounded-circle" alt="aa">
+                                        </a>
+                                        <a href="#" class="btn-m-s fs-xs">
+                                            <span data-hasmore="+7" class="rounded-circle profile-image-sm">
+                                                <img src="/admin/img/demo/avatars/avatar-j.png"
+                                                    class="profile-image-sm rounded-circle" alt="aa">
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="p-3 text-center">
+                                <div class="height-2 d-flex flex-row align-items-center flex-wrap flex-shrink-0">
+                                    <a href="javascript:void(0);" class="btn btn-icon fs-xl width-1 mr-1"
+                                        data-toggle="tooltip" data-original-title="More options" data-placement="top">
+                                        <i class="fal fa-ellipsis-v-alt color-fusion-300"></i>
+                                    </a>
+                                    <a href="javascript:void(0);" class="btn btn-icon fs-xl mr-1" data-toggle="tooltip"
+                                        data-original-title="Attach files" data-placement="top">
+                                        <i class="fal fa-paperclip color-fusion-300"></i>
+                                    </a>
+                                    <a href="javascript:void(0);" class="btn btn-icon fs-xl mr-1" data-toggle="tooltip"
+                                        data-original-title="Insert photo" data-placement="top">
+                                        <i class="fal fa-camera color-fusion-300"></i>
+                                    </a>
+                                    <button class="btn btn-info shadow-0 ml-auto">Post</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </x-slot>
