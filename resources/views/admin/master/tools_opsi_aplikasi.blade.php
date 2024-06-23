@@ -19,8 +19,8 @@
             ])
             @endcomponent
         </div>
-        <x-row-column :column="3">
-            <x-slot name='column1'>
+        <x-col size1=3 size2=3 size3=6>
+            <x-slot name="content1">
                 <x-panel.show title="Akses" subtitle="Users">
                     <x-slot name="paneltoolbar">
                         <x-panel.tool-bar class="ml-2">
@@ -66,7 +66,7 @@
                     </div>
                 </x-panel.show>
             </x-slot>
-            <x-slot name='column2'>
+            <x-slot name="content2">
                 <x-panel.show title="Aktifkan" subtitle="Fitur">
                     <x-slot name="paneltoolbar">
                         <x-panel.tool-bar class="ml-2">
@@ -112,7 +112,7 @@
                     </div>
                 </x-panel.show>
             </x-slot>
-            <x-slot name='column3'>
+            <x-slot name="content3">
                 <x-panel.show title="Under" subtitle="Construction">
                     <x-slot name="paneltoolbar">
                         <x-panel.tool-bar class="ml-2">
@@ -150,6 +150,6 @@
                     </form>
                 </x-panel.show>
             </x-slot>
-        </x-row-column>
+        </x-col>
     </main>
 @endsection
