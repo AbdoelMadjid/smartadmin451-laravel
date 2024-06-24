@@ -19,7 +19,7 @@
             ])
             @endcomponent
         </div>
-        <x-col :size1="4" :size2="3" :size3="5">
+        <x-col :size1="4" :size2="8">
             <x-slot name='content1'>
                 <div class="card mb-g shadow-5">
                     <div class="card-header pr-3 d-flex align-items-center flex-wrap">
@@ -44,115 +44,72 @@
                             </button>
                         </div> --}}
                     </div>
-                    <div class="table-responsive m-4">
-                        <table class="table table-clean table-sm align-self-end"
-                            style='margin: 0 auto;width:100%;border-collapse:collapse;'>
-                            <tbody>
-                                <tr>
-                                    <td>Status</td>
-                                    <td>:</td>
-                                    <td>Negeri</td>
-                                </tr>
-                                <tr>
-                                    <td>Nama Sekolah</td>
-                                    <td>:</td>
-                                    <td>SMKN 1 Kadipaten</td>
-                                </tr>
-                                <tr>
-                                    <td>Status</td>
-                                    <td>:</td>
-                                    <td>Negeri</td>
-                                </tr>
-                                <tr>
-                                    <td>Status</td>
-                                    <td>:</td>
-                                    <td>Negeri</td>
-                                </tr>
-                                <tr>
-                                    <td>Status</td>
-                                    <td>:</td>
-                                    <td>Negeri</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="row row-grid no-gutters">
+                        <div class="col-12">
+                            <div class="p-3">
+                                <div class="align-items-center mt-5 mb-5">
+                                    <div class='icon-stack display-1 flex-shrink-0 d-block m-auto'>
+                                        <i class="fal fa-circle icon-stack-4x opacity-100 color-primary-400"></i>
+                                        <i class="fas fa-download icon-stack-1x opacity-100 color-primary-500"></i>
+                                    </div>
+                                    <div class="p-1 text-center">
+                                        <strong class="fw-900 fs-xxl color-primary-400">
+                                            SMKN 1 KADIPATEN
+                                        </strong>
+                                        <br>
+                                        Laporan Capaian Kompetensi Siswa
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="p-3">
+                                <div class="table-responsive m-4">
+                                    <table class="table table-clean table-sm align-self-end"
+                                        style='margin: 0 auto;width:100%;border-collapse:collapse;'>
+                                        <tbody>
+                                            <tr>
+                                                <td>Status</td>
+                                                <td>:</td>
+                                                <td>Negeri</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nama Sekolah</td>
+                                                <td>:</td>
+                                                <td>SMKN 1 Kadipaten</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Status</td>
+                                                <td>:</td>
+                                                <td>Negeri</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Status</td>
+                                                <td>:</td>
+                                                <td>Negeri</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Status</td>
+                                                <td>:</td>
+                                                <td>Negeri</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </x-slot>
             <x-slot name='content2'>
-                <div class="card mb-g shadow-5">
+                <div class="card m-auto border shadow-5">
                     <div class="card-header pr-3 d-flex align-items-center flex-wrap">
                         <!-- we wrap header title inside a span tag with utility padding -->
-                        <div class="card-title mb-0 fs-xl fw-700"> <i class="fal fa-calendar-alt color-primary-700"></i>
-                            Tahun Ajaran
+                        <div class="card-title mb-0 fs-xl fw-700"> <i class="fal fa-user color-primary-700"></i>
+                            Kepala Sekolah
                         </div>
-                        <x-button color="primary" size="xs" pills :label="__('Opsion')" class="ml-auto" />
-                        {{-- <button class="btn btn-icon btn-xs ml-auto fs-xl" data-toggle="dropdown">
-                            <i class="fal fa-ellipsis-v"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-animated dropdown-menu-right">
-                            <button class="dropdown-item">
-                                Option 1
-                            </button>
-                            <button class="dropdown-item">
-                                Option 2
-                            </button>
-                            <div class="dropdown-divider m-0"></div>
-                            <button class="dropdown-item">
-                                Refresh
-                            </button>
-                        </div> --}}
-                    </div>
-
-                    <div class="row row-grid no-gutters">
-                        <div class="col-12">
-                            <table class="table table-sm table-bordered table-striped table-hover m-0">
-                                <thead class="thead-dark">
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Tahun Ajaran</th>
-                                        <th>Aktif</th>
-                                        <th>Ganjil</th>
-                                        <th>Genap</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>2021-2022</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>2022-2023</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>2025-2024</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <div class="p-3">
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </x-slot>
-            <x-slot name='content3'>
-                <div class="card m-auto border shadow-5">
-                    <div class="card-header">
-                        <h2 class="mb-0 fs-xl fw-700">
-                            <i class="fal fa-user-tie"></i> Kepala Sekolah
-                        </h2>
+                        <x-button color="primary" icon="plus-square" size="xs" pills :label="__('Tambah')"
+                            class="ml-auto" />
                     </div>
                     <div class="row row-grid no-gutters">
                         <div class="col-12">
@@ -196,51 +153,6 @@
                         </div>
                     </div>
                 </div>
-            </x-slot>
-        </x-col>
-
-        <x-col :size1="4" :size2="4" :size3="4">
-            <x-slot name='content1'>
-                <div class="card mb-g shadow-5">
-                    <div class="card-header pr-3 d-flex align-items-center flex-wrap">
-                        <!-- we wrap header title inside a span tag with utility padding -->
-                        <div class="card-title mb-0 fs-xl fw-700"> <i class="fal fa-camera color-primary-700"></i>
-                            Logo Sekolah
-                        </div>
-                        <x-button color="primary" size="xs" icon="upload" pills :label="__('Upload')" class="ml-auto" />
-                        {{-- <button class="btn btn-icon btn-xs ml-auto fs-xl" data-toggle="dropdown">
-                            <i class="fal fa-ellipsis-v"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-animated dropdown-menu-right">
-                            <button class="dropdown-item">
-                                Option 1
-                            </button>
-                            <button class="dropdown-item">
-                                Option 2
-                            </button>
-                            <div class="dropdown-divider m-0"></div>
-                            <button class="dropdown-item">
-                                Refresh
-                            </button>
-                        </div> --}}
-                    </div>
-                    <div class="align-items-center mt-5 mb-5">
-                        <div class='icon-stack display-1 flex-shrink-0 d-block m-auto'>
-                            <i class="fal fa-circle icon-stack-4x opacity-100 color-primary-400"></i>
-                            <i class="fas fa-download icon-stack-1x opacity-100 color-primary-500"></i>
-                        </div>
-                        <div class="p-1 text-center">
-                            <strong class="fw-900 fs-xxl color-primary-400">
-                                EKSPOR DATA MASTER
-                            </strong>
-                            <br>
-                            Laporan Capaian Kompetensi Siswa
-                        </div>
-                    </div>
-                </div>
-            </x-slot>
-            <x-slot name='content2'>
-
             </x-slot>
             <x-slot name='content3'>
 

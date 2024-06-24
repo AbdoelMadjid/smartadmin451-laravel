@@ -90,6 +90,11 @@
         <span class="nav-link-text" data-i18n="nav.kurikulum">Kurikulum</span>
     </a>
     <ul>
+        <li class="{{ Request::is('kurikulum_tahunajaran*') ? 'active' : '' }}">
+            <a href="/kurikulum_tahunajaran" title="Tahun Ajaran" data-filter-tags="kurikulum tahunajaran">
+                <span class="nav-link-text" data-i18n="nav.kurikulum_tahunajaran">Tahun Ajaran</span>
+            </a>
+        </li>
         <li class="{{ Request::is('kurikulum_versi*') ? 'active' : '' }}">
             <a href="/kurikulum_versi" title="Versi Kurikulum" data-filter-tags="kurikulum versi kurikulum">
                 <span class="nav-link-text" data-i18n="nav.kurikulum_versi">Versi Kurikulum</span>

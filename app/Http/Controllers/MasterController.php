@@ -67,6 +67,10 @@ class MasterController extends Controller
     {
         return view('admin.master.kurikulum_versi');
     }
+    public function kurikulum_tahunajaran()
+    {
+        return view('admin.master.kurikulum_tahunajaran');
+    }
     public function kurikulum_pengumuman()
     {
         return view('admin.master.kurikulum_pengumuman');

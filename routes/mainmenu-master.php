@@ -42,6 +42,7 @@ Route::get('/akademik_peserta_didik', [MasterController::class, 'akademik_pesert
 
 //kurikulum
 Route::get('/kurikulum_versi', [MasterController::class, 'kurikulum_versi'])->name('kurikulum_versi');
+Route::get('/kurikulum_tahunajaran', [MasterController::class, 'kurikulum_tahunajaran'])->name('kurikulum_tahunajaran');
 Route::get('/kurikulum_pengumuman', [MasterController::class, 'kurikulum_pengumuman'])->name('kurikulum_pengumuman');
 Route::get('/kurikulum_perakat_ujian', [MasterController::class, 'kurikulum_perakat_ujian'])->name('kurikulum_perakat_ujian');
 Route::get('/kurikulum_proses_kbm_perkelas', [MasterController::class, 'kurikulum_proses_kbm_perkelas'])->name('kurikulum_proses_kbm_perkelas');
