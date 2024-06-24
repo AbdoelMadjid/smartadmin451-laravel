@@ -11,10 +11,6 @@
             <span class="nav-link-text" data-i18n="nav.application_about">About</span>
         </a>
     </li>
-    @include('admin.inc.mainmenu._menu_master')
-    @include('admin.inc.mainmenu._menu_walikelas')
-    @include('admin.inc.mainmenu._menu_gurumapel')
-    @include('admin.inc.mainmenu._menu_siswa')
     @include('admin.inc.mainmenu._menu_depelover')
     @include('admin.inc.mainmenu._menu_intel_app')
     @include('admin.inc.mainmenu._menu_tools_component_app')
